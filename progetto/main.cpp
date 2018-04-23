@@ -3,6 +3,7 @@
 //#include <testo.h>
 #include <cifrariocesare.h>
 #include <cifrariovigenere.h>
+#include <sha1.h>
 #include <iostream>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -11,6 +12,18 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    /* prova sha1 NONO FUNZIONANTE
+    QString str="abc";
+
+
+    sha1 s(str);
+    //qDebug<<sizeof(str);
+    qDebug()<<endl<<"main";
+    for(int i=0;i<3;i++){
+        qDebug()<<str[i].unicode();
+    }
+    s.encrypt();
+/*
 /*
     //__________PROVA CESARE___________
      QString t("Jm tpmf è hjbmmp a");
