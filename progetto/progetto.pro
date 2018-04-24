@@ -30,14 +30,18 @@ SOURCES += \
     sha1.cpp \
     testo.cpp \
     cifrariocesare.cpp \
-    cifrariovigenere.cpp
+    cifrariovigenere.cpp \
+    controller.cpp \
+    cesareView.cpp
 
 HEADERS += \
         mainwindow.h \
     sha1.h \
     testo.h \
     cifrariocesare.h \
-    cifrariovigenere.h
+    cifrariovigenere.h \
+    controller.h \
+    cesareView.h
 
 FORMS += \
         mainwindow.ui

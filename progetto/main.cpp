@@ -1,6 +1,6 @@
 #include "mainwindow.h"
+#include <controller.h>
 #include <QApplication>
-//#include <testo.h>
 #include <cifrariocesare.h>
 #include <cifrariovigenere.h>
 #include <sha1.h>
@@ -9,9 +9,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    controller controllerApp;
+    //MainWindow w;
+    //w.show();
 
+     return a.exec();
     /* prova sha1 NONO FUNZIONANTE
     QString str="abc";
 
@@ -58,5 +60,5 @@ int main(int argc, char *argv[])
 
 
 
-    return a.exec();
+
 }

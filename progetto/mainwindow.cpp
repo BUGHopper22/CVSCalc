@@ -1,54 +1,60 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "iostream"
+#include <cifrariocesare.h>
+#include <cesareView.h>
+using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent):QWidget(parent)
 {
-    ui->setupUi(this);
+    this->setFixedSize(1000,500);
+    this->setWindowTitle("Dyh Fhvduh");
+    this->setStyleSheet("font-size: large;");
+
+
+
+
+
+    /*menuTabs=new QTabWidget;
+    cesareView=new QWidget();
+    vigenereTab=new QWidget();
+    sha1Tab=new QWidget();*/
+
+
+    menuTabs=new QTabWidget;
+
+
+
+    //creo le tab del menu vuote
+    menuTabs->addTab(new cesareView(),"cifrario Cesare");
+    menuTabs->addTab(new cesareView(),"cifrario Vigenere");
+    menuTabs->addTab(new cesareView(),"sha-1");
+
+    //CESARE
+
+
+
+
+    //connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    //connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    mainLayout->addWidget(menuTabs);
+    setLayout(mainLayout);
+
 }
 
 MainWindow::~MainWindow()
 {
-
-
-
-
-/*const QString text="ciao";
-QByteArray byteMsg(text);
-QBitArray bitMsg(text.size()*8);
-//binMsg.insert(0,text);
-for(int i=0; i<byteMsg.count(); ++i) {
-    for(int b=0; b<8;b++) {
-        bitMsg.setBit( i*8+b, byteMsg.at(i)&(1<<(7-b)) );
-        std::cout<<(1<<(7-b))<<" ";
-    }
 }
-//for (int i=0;i<text.size();i++)
-  //      std::cout<<binMsg[i];
 
-   /* int dimChar =sizeof(char)*CHAR_BIT;
-    QString text="ciao";   //text campo dati della classe base astratta, pensare meglio !! usato come se fosse un Qstring
-    const unsigned int dimArray=dimChar*text.size();
-    std::bitset<dimArray> bitset3(std::string(text));
-    QBitArray binMsg(dimArray);
-    for ( int i = 0 ; i < dimArray ; i++ )
-            binMsg[i] = bitset3[i];
-            std::cout<<binMsg[i]<<" ";
-    std::cout<<dimArray<<" ";
+/*void MainWindow::on_pushButton_3_clicked()
+{
+    QString s = ui->textEdit_3->toPlainText();
+    cifrarioCesare c(s,3);
+    ui->plainTextEdit->setPlainText(c.getText());
+    c.encrypt();
+    ui->plainTextEdit->setPlainText(c.getCiph());
 
-/*    QByteArray array(QByteArray::fromStdString("ciaoooo"));
-    //array(QByteArray::fromStdString("ciaoooo"));
-    //array.fromStdString("ciao");
-    QByteArray::iterator it=array.begin();
+}*/
 
-    for(int i=0;i<5;i++){
-        std::cout<<array[i]<<" ";
-    }
-
-    for(;it<array.end();it++){
-        std::cout<<*it<<" "<<array.size();
-    }*/
-
-    delete ui;
-}

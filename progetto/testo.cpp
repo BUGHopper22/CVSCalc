@@ -19,3 +19,7 @@ int testo::getSize() const{
 void testo::reset(){
     text.clear();
 }
+
+QString testo::getText(){
+    return text;
+}

@@ -1,6 +1,7 @@
 #ifndef CIFRARIOCESARE_H
 #define CIFRARIOCESARE_H
 #include<testo.h>
+
 //#include<stdint.h>
 
 class cifrarioCesare:public testo{
@@ -19,7 +20,8 @@ public:
     void copy() const;      //DA FARE
     virtual void encrypt();
     virtual void decrypt();
-
+    QString getCiph();
+    QString getText();
 };
 
 //_________________EMMO' DOVELIMETTOQUESTI?__________________

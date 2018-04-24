@@ -66,7 +66,9 @@ void cifrarioCesare::decrypt()
     return;
 }
 
-
+QString cifrarioCesare::getCiph(){
+    return ciph;
+}
 
 /*CORRETTO, RIVEDI LA FUNZIONE SE QUALCOSA NON COMPILA
 string s="La banana è rossa zzz";
@@ -90,3 +92,6 @@ for (int i = 0; i < s.size(); i++){
     cout<<endl;
 }
 cout<<s<<endl;*/
+QString cifrarioCesare::getText(){
+    return testo::getText();
+}
