@@ -36,7 +36,7 @@ private:
     int SHA1Input(const uint8_t *,unsigned int);
     int SHA1Input(const QVector<uint8_t> );
     int SHA1Result(uint8_t Message_Digest[SHA1HashSize]);
-
+//caccapupù
     //________IMPORTANTE_____________//
     //QString usa QChar in codifica: UTF-16.
     //Quindi quando uso encrypt sulla QString sto andando a fare l' hash su quella codifica
