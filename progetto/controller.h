@@ -12,6 +12,7 @@ private:
 public:
     controller();
     ~controller();
+    void showC();
 };
 
 #endif // CONTROLLER_H

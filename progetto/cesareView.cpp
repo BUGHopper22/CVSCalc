@@ -3,11 +3,11 @@
 
 cesareView::cesareView(QWidget *parent):QWidget(parent){
 
-    inputTitle=new QTextEdit("input");
-    outputTitle= new QTextEdit("output");
-    keyTitle=new QTextEdit;
-    inputText=new QLabel;
-    outputText=new QLabel;
+    inputTitle=new QLabel("input");
+    outputTitle= new QLabel("output");
+    keyTitle=new QLabel("key");
+    inputText=new QTextEdit;
+    outputText=new QTextEdit;
     keyText=new QSpinBox;
     encRadButton=new QRadioButton("encrypt");
     decRadButton= new QRadioButton("decrypt");
@@ -41,7 +41,7 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     vBox3->addWidget(outputTitle);
     vBox3->addWidget(outputText);
 
-    vBox2->addWidget(keyText);
+    vBox2->addWidget(keyTitle);
     encDecBox->addWidget(keyText);
     vBox2->addLayout(encDecBox);
     encDecBox->addWidget(encRadButton);

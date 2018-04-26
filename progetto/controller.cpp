@@ -2,8 +2,8 @@
 
 controller::controller():w(new MainWindow){
 
-    w->show();
+    //w->show();
 }
 
-
+void controller::showC(){w->show();}
 controller::~controller(){}

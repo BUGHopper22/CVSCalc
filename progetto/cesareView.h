@@ -17,17 +17,18 @@ class cesareView:public QWidget{
 private:
     //CESARE
     //__box
+
     QHBoxLayout* content;
     QHBoxLayout* encDecBox;
     QVBoxLayout* vBox1;
     QVBoxLayout* vBox2;
     QVBoxLayout* vBox3;
     //__obj
-    QTextEdit* inputTitle;
-    QTextEdit* outputTitle;
-    QTextEdit* keyTitle;
-    QLabel* inputText;
-    QLabel* outputText;
+    QTextEdit* inputText;
+    QTextEdit* outputText;
+    QLabel* keyTitle;
+    QLabel* inputTitle;
+    QLabel* outputTitle;
     QSpinBox* keyText;
     QRadioButton* encRadButton;
     QRadioButton* decRadButton;

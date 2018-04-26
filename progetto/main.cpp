@@ -6,10 +6,23 @@
 #include <sha1.h>
 #include <iostream>
 #include <QDebug>
+#include <QFile>
+#include <QIODevice>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     controller controllerApp;
+
+
+    //___STYLESHEET___
+    QFile File(":/new/prefix1/Stylesheet.qss");
+    File.open(QFile::ReadOnly);
+    QString StyleSheet=QLatin1String(File.readAll());
+    a.setStyleSheet(StyleSheet);
+    //___FINE_STYLESHEET___
+
+    controllerApp.showC();
     //MainWindow w;
     //w.show();
 
