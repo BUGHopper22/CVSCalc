@@ -23,6 +23,7 @@ public:
     int getSize() const ;
 
     //___METODI___
+    virtual void converti() =0;
     virtual void encrypt() =0;
     virtual void decrypt() =0;
     virtual void reset();

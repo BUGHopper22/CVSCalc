@@ -5,8 +5,6 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = progetto
@@ -33,8 +31,7 @@ SOURCES += \
     cifrariovigenere.cpp \
     controller.cpp \
     cesareView.cpp \
-    vigenereview.cpp \
-    cesarecontroller.cpp
+    vigenereview.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,15 +41,14 @@ HEADERS += \
     cifrariovigenere.h \
     controller.h \
     cesareView.h \
-    vigenereview.h \
-    cesarecontroller.h
+    vigenereview.h
 
 FORMS += \
         mainwindow.ui
 
-DISTFILES += \
-    img/ConvertiVerde.png \
-    img/ConvertiVerdeC.png
+DISTFILES +=
 
 RESOURCES += \
-    stylesheet.qrc
+    stylesheet.qrc \
+    img/stylesheet.qrc
+qrc_stylesheet.cpp

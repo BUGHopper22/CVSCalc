@@ -69,6 +69,7 @@ void cesareView::convert(){
 
 void cesareView::cesareOutput(QString s){
      outputText->clear();
+     
     outputText->insertPlainText(s);
 }
 /*void convertMethod(QString s,ushort k,bool ed){

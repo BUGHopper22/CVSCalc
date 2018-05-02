@@ -42,6 +42,7 @@ signals:
     void convertMethod(QString,int,bool);//da definire
 public slots:
     void convert();
+    void cesareOutput(QString);
 };
 
 #endif // CESARETAB_H

@@ -12,17 +12,26 @@ ushort operator-(QChar c, const ushort& i){
 cifrarioCesare::cifrarioCesare(QString c, ushort s): testo(c),ciph(c),shift(s%26) {}
 
 //___SETTER___
+void cifrarioCesare::setCheck(bool b){check=b;}
 void cifrarioCesare::setText(QString s){ testo::setText(s); }
 void cifrarioCesare::setCiph(QString s){ ciph.clear(); ciph.append(s); }
 void cifrarioCesare::setShift(int s){ shift=s%26; }
 
 
 //___GETTER___
+bool cifrarioCesare::getCheck()const{return check;}
 QChar cifrarioCesare::getCar(int i) const{ return ciph[i]; }
 QString cifrarioCesare::getCiph() const{ return ciph; }
 QString cifrarioCesare::getText() const{ return testo::getText(); }
 
 //___METODI___
+void cifrarioCesare::converti(){
+    if(check)
+        encrypt();
+    else
+        decrypt();
+}
+
 void cifrarioCesare::encrypt(){// CONTROLLA Letter_Lowercase____Letter_Uppercase____isLetter
     for (int i = 0; i < getSize(); i++){
         const QChar letter=ciph.at(i);

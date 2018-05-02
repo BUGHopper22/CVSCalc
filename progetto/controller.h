@@ -21,6 +21,8 @@ public:
 public slots:
     //CESARE
     void convert(QString,int,bool);
+signals:
+    void cesareOutput(QString);
 
 };
 

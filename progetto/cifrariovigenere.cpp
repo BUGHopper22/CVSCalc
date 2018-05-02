@@ -25,6 +25,9 @@ QString cifrarioVigenere::getText() const{return testo::getText();}
 QString cifrarioVigenere::getCiph() const{return ciph;}
 
 //___METODI___
+void cifrarioVigenere::converti(){
+    return;// ricordardi di sistemare
+}
 void cifrarioVigenere::reset(){
     testo::reset();
     ciph.clear();   //ATTENZIONE: probabilmente size of string=0. Controllare cosa fa il clear!!

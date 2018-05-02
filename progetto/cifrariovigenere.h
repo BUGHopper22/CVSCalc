@@ -28,6 +28,7 @@ public:
     QString getCiph() const;
 
     //___METODI
+    virtual void converti();
     virtual void encrypt();
     virtual void decrypt();
     void reset();       //DA FARE metodo sovraccaricato dalla base

@@ -8,7 +8,6 @@ INPUT(
 ./debug\controller.o
 ./debug\cesareView.o
 ./debug\vigenereview.o
-./debug\cesarecontroller.o
 ./debug\qrc_stylesheet.o
 ./debug\moc_mainwindow.o
 ./debug\moc_controller.o

@@ -2,7 +2,6 @@
     <qresource prefix="/styleSheet">
         <file>stylesheet.qrc</file>
         <file>img/ConvertiVerde.png</file>
-        <file>img/ConvertiVerdeC.png</file>
         <file>Stylesheet.qss</file>
         <file>rc/branch_closed-on.png</file>
         <file>rc/branch_closed.png</file>
