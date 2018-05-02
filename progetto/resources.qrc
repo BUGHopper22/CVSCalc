@@ -2,4 +2,30 @@
     <qresource prefix="/new/prefix1">
         <file>Stylesheet.qss</file>
     </qresource>
+    <qresource prefix="/img"/>
+    <qresource prefix="/">
+        <file>img/ConvertiVerde.png</file>
+        <file>img/ConvertiVerdeC.png</file>
+        <file>cesareView.cpp</file>
+        <file>cesareView.h</file>
+        <file>cifrariocesare.cpp</file>
+        <file>cifrariocesare.h</file>
+        <file>cifrariovigenere.cpp</file>
+        <file>cifrariovigenere.h</file>
+        <file>controller.cpp</file>
+        <file>controller.h</file>
+        <file>lisufvhu.cpp</file>
+        <file>lisufvhu.h</file>
+        <file>main.cpp</file>
+        <file>mainwindow.cpp</file>
+        <file>mainwindow.h</file>
+        <file>sha1.cpp</file>
+        <file>sha1.h</file>
+        <file>sha1algorithm.cpp</file>
+        <file>sha1algorithm.h</file>
+        <file>testo.cpp</file>
+        <file>testo.h</file>
+        <file>vigenereview.cpp</file>
+        <file>vigenereview.h</file>
+    </qresource>
 </RCC>

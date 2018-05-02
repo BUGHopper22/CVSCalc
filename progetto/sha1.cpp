@@ -117,6 +117,7 @@ int sha1::SHA1Input(const QVector<uint8_t> arr){
 
         //err= SHA1Input((const unsigned char *)&array[i] ,strlen(array[i]));
     }
+
 }
 int sha1::SHA1Result(uint8_t Message_Digest[SHA1HashSize]){
     int i;

@@ -1,10 +1,7 @@
 #include "cifrariovigenere.h"
 #include <QDebug>
 
-cifrarioVigenere::cifrarioVigenere(QString c,QString v):ciph(c),key(v){}
-
-const ushort cifrarioVigenere::fix=96;// forse 97
-
+//____RIDEF. OPERATOR TRA QCHAR___
 ushort operator+(QChar a,QChar const & b){
     return ushort(a.unicode()+(b.unicode()));
 }
@@ -13,48 +10,45 @@ ushort operator-(QChar a,QChar const & b){
     return ushort(a.unicode()-b.unicode());
 }
 
-//unsigned short int cifrarioVigenere::fix=26;
+const ushort cifrarioVigenere::fix=96;// forse 97
 
-/*void cifrarioVigenere::setKey(QString k){
-    key(k);//costruzione di copia di QString
-}*/
-QChar cifrarioVigenere::getCar(int i) const{
-    return ciph[i];
-}
+cifrarioVigenere::cifrarioVigenere(QString c,QString v):testo(c),ciph(c),key(v){}
 
+//___SETTER___
+void cifrarioVigenere::setText(QString s){testo::setText(s);}
+void cifrarioVigenere::setKey(QString s){key.clear();key.append(s);}
+void cifrarioVigenere::setCiph(QString s){ciph.clear();ciph.append(s);}
+
+//___GETTER____
+QChar cifrarioVigenere::getCar(int i) const{ return ciph[i]; }
+QString cifrarioVigenere::getText() const{return testo::getText();}
+QString cifrarioVigenere::getCiph() const{return ciph;}
+
+//___METODI___
 void cifrarioVigenere::reset(){
     testo::reset();
     ciph.clear();   //ATTENZIONE: probabilmente size of string=0. Controllare cosa fa il clear!!
     key.clear();    //ATTENZIONE: probabilmente size of string=0. Controllare cosa fa il clear!!
 }
-
-//________RICORDA: a equivale a zero_________
 void cifrarioVigenere::encrypt(){
+    //________RICORDA: a equivale a zero_________
     QString::const_iterator cit=key.cbegin();
     QString::iterator it;
     for (it=ciph.begin();it!=ciph.end();it++){
-
         if(cit==key.cend())
             cit=key.cbegin();
         QChar letter=*it;
-
         QChar shift=(*cit)-97;
         if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){// sono i caratteri che devo andare a modificare
-            if(     (letter>='A' && letter<='Z' && letter+shift>ushort('Z'))||
-                    (letter>='a' && letter<='z' && letter+shift>ushort('z'))     )
-            {    *it=QChar(letter+shift-alphSize);
-                //qDebug()<<"first"<<*it<<QChar(letter+shift-alphSize)<<" "<<letter.unicode()<<""<<shift.unicode()<<" "<<letter<<" "<<shift<<" "<<endl;
-             }           //QChar( ciph.at(i).toLatin()+shift-('0'+uint8_t(26)) );
-            else{
+            if( (letter>='A' && letter<='Z' && letter+shift>ushort('Z'))||
+                (letter>='a' && letter<='z' && letter+shift>ushort('z')) )
+                *it=QChar(letter+shift-alphSize);
+            else
                 *it=letter+shift;
-                //qDebug()<<"SECOND"<<*it<<QChar(letter+shift)<<" "<<letter.unicode()<<""<<shift.unicode()<<" "<<letter<<" "<<shift<<" "<<endl;
-            }
-                ++cit;
-            if( cit==key.cend() ){
+            ++cit;
+            if( cit==key.cend() )
                 cit=key.cbegin();
-            }
         }
-        //else{}    non c è nessun else perchè ho già copiato la stringa dentro ciph quindi non devo modificare nulla
     }
     return;
 }
@@ -63,28 +57,20 @@ void cifrarioVigenere::decrypt(){
     QString::const_iterator cit=key.cbegin();
     QString::iterator it;
     for (it=ciph.begin();it!=ciph.end();it++){
-
         if(cit==key.cend())
             cit=key.cbegin();
         QChar letter=*it;
-
         QChar shift=(*cit)-97;
         if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){// sono i caratteri che devo andare a modificare
-            if(     (letter>='A' && letter<='Z' && letter-shift<ushort('A'))||
-                    (letter>='a' && letter<='z' && letter-shift<ushort('a'))     )
-            {    *it=QChar(letter-shift+alphSize);
-                //qDebug()<<"first"<<*it<<QChar(letter+shift-alphSize)<<" "<<letter.unicode()<<""<<shift.unicode()<<" "<<letter<<" "<<shift<<" "<<endl;
-             }           //QChar( ciph.at(i).toLatin()+shift-('0'+uint8_t(26)) );
-            else{
+            if( (letter>='A' && letter<='Z' && letter-shift<ushort('A'))||
+                (letter>='a' && letter<='z' && letter-shift<ushort('a')) )
+                *it=QChar(letter-shift+alphSize);
+            else
                 *it=QChar(letter-shift);
-                //qDebug()<<"SECOND"<<*it<<QChar(letter+shift)<<" "<<letter.unicode()<<""<<shift.unicode()<<" "<<letter<<" "<<shift<<" "<<endl;
-            }
-                ++cit;
-            if( cit==key.cend() ){
+            ++cit;
+            if( cit==key.cend() )
                 cit=key.cbegin();
-            }
         }
-        //else{}    non c è nessun else perchè ho già copiato la stringa dentro ciph quindi non devo modificare nulla
     }
     return;
 

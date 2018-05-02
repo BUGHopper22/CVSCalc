@@ -11,13 +11,12 @@
 #include <QKeySequenceEdit>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QString>
 
 class cesareView:public QWidget{
     Q_OBJECT
 private:
-    //CESARE
     //__box
-
     QHBoxLayout* content;
     QHBoxLayout* encDecBox;
     QVBoxLayout* vBox1;
@@ -35,8 +34,14 @@ private:
     QPushButton* convertButton;
     QPushButton* copyButton;
     QPushButton* resetButton;
+
+
 public:
     explicit cesareView(QWidget *parent = 0);
+signals:
+    void convertMethod(QString,int,bool);//da definire
+public slots:
+    void convert();
 };
 
 #endif // CESARETAB_H

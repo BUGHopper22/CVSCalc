@@ -1,0 +1,17 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\sha1.o
+./debug\testo.o
+./debug\cifrariocesare.o
+./debug\cifrariovigenere.o
+./debug\controller.o
+./debug\cesareView.o
+./debug\vigenereview.o
+./debug\cesarecontroller.o
+./debug\qrc_stylesheet.o
+./debug\moc_mainwindow.o
+./debug\moc_controller.o
+./debug\moc_cesareView.o
+./debug\moc_vigenereview.o
+);

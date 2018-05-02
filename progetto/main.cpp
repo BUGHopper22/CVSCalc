@@ -16,10 +16,10 @@ int main(int argc, char *argv[])
 
 
     //___STYLESHEET___
-    QFile File(":/new/prefix1/Stylesheet.qss");
+    /*QFile File(":/styleSheet/Stylesheet.qss");
     File.open(QFile::ReadOnly);
     QString StyleSheet=QLatin1String(File.readAll());
-    a.setStyleSheet(StyleSheet);
+    a.setStyleSheet(StyleSheet);*/
     //___FINE_STYLESHEET___
 
     controllerApp.showC();
@@ -27,19 +27,17 @@ int main(int argc, char *argv[])
     //w.show();
 
      return a.exec();
-    /* prova sha1 NONO FUNZIONANTE
-    QString str="abc";
 
-
-    sha1 s(str);
+     //__________PROVA SHA1___________
+     /* prova sha1 NONO FUNZIONANTE
+   sha1 s(str);
     //qDebug<<sizeof(str);
     qDebug()<<endl<<"main";
     for(int i=0;i<3;i++){
         qDebug()<<str[i].unicode();
     }
-    s.encrypt();
-/*
-/*
+    s.encrypt();/*
+    /*
     //__________PROVA CESARE___________
      QString t("Jm tpmf è hjbmmp a");
     for(int i=0;i<16;i++){
@@ -53,7 +51,7 @@ int main(int argc, char *argv[])
     for(int i=0;i<t.size();i++){
       qDebug()<<c.getCar(i);
     }
-*/
+    */
  /*
     //__________PROVA VIGENERE___________encrypt
      QString t("Dp japz è kzmpgs q");

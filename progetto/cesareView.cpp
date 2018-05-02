@@ -1,4 +1,6 @@
 #include "cesareView.h"
+#include "cifrariocesare.h"
+#include "controller.h"
 
 
 cesareView::cesareView(QWidget *parent):QWidget(parent){
@@ -50,5 +52,29 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(copyButton);
     vBox2->addWidget(resetButton);
 
+
+
     setLayout(content);
+
+    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convert()));
 }
+
+void cesareView::convert(){
+    if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
+        emit convertMethod(inputText->toPlainText(),keyText->value(),encRadButton->isChecked());
+    else{
+        //errore input
+    }
+}
+/*void convertMethod(QString s,ushort k,bool ed){
+    s=inputText->toPlainText();
+    k=keyText->value();
+
+}
+*/
+
+
+/*void cesareView::cesareOutput(){
+    outputText->clear();
+    outputText(cesare.getCiph());
+}*/

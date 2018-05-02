@@ -1,0 +1,17 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\sha1.o
+./release\testo.o
+./release\cifrariocesare.o
+./release\cifrariovigenere.o
+./release\controller.o
+./release\cesareView.o
+./release\vigenereview.o
+./release\cesarecontroller.o
+./release\qrc_stylesheet.o
+./release\moc_mainwindow.o
+./release\moc_controller.o
+./release\moc_cesareView.o
+./release\moc_vigenereview.o
+);

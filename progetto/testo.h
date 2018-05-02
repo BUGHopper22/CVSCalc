@@ -8,17 +8,24 @@ using namespace std;
 class testo{
 private:
     QString text;
-
 public:
+    static const ushort alphSize;  //probabilmente nella parte privata?
+
     testo(QString text="");
-    static const ushort alphSize;//probabilmente nella parte privata?
+    //virtual ~testo();     DA DEFINIRE PIU TARDI
+
+    //___SETTER___
+    void setText(QString);
+
+    //___GETTER___
+    QString getText() const;
     QChar getLetter(int) const;
     int getSize() const ;
-    virtual void reset();
-    //virtual ~testo();
+
+    //___METODI___
     virtual void encrypt() =0;
     virtual void decrypt() =0;
-    QString getText();
+    virtual void reset();
 };
 
 

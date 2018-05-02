@@ -1,4 +1,4 @@
-    #ifndef SHA1_H
+#ifndef SHA1_H
 #define SHA1_H
 #include <stdint.h>
 #include <QString>

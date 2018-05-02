@@ -33,7 +33,8 @@ SOURCES += \
     cifrariovigenere.cpp \
     controller.cpp \
     cesareView.cpp \
-    vigenereview.cpp
+    vigenereview.cpp \
+    cesarecontroller.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,13 +44,15 @@ HEADERS += \
     cifrariovigenere.h \
     controller.h \
     cesareView.h \
-    vigenereview.h
+    vigenereview.h \
+    cesarecontroller.h
 
 FORMS += \
         mainwindow.ui
 
 DISTFILES += \
-    Stylesheet.qss
+    img/ConvertiVerde.png \
+    img/ConvertiVerdeC.png
 
 RESOURCES += \
-    resources.qrc
+    stylesheet.qrc
