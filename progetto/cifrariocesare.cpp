@@ -70,7 +70,7 @@ void cifrarioCesare::decrypt(){
 void cifrarioCesare::reset(){
     testo::reset();
     ciph.clear();
-    shift=3;
+    shift=0;
 }
 
 

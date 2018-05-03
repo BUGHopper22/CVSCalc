@@ -20,9 +20,12 @@ public:
     void showC();
 public slots:
     //CESARE
-    void convert(QString,int,bool);
+    void convert(QString,int,bool);//convert button
+    void reset();//reset button
+
 signals:
-    void cesareOutput(QString);
+    void cesareOutput(QString);//convert button
+    void resetOutput();
 
 };
 

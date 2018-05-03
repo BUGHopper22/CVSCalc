@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_controller_t {
-    QByteArrayData data[4];
-    char stringdata0[33];
+    QByteArrayData data[6];
+    char stringdata0[51];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,10 +32,13 @@ static const qt_meta_stringdata_controller_t qt_meta_stringdata_controller = {
 QT_MOC_LITERAL(0, 0, 10), // "controller"
 QT_MOC_LITERAL(1, 11, 12), // "cesareOutput"
 QT_MOC_LITERAL(2, 24, 0), // ""
-QT_MOC_LITERAL(3, 25, 7) // "convert"
+QT_MOC_LITERAL(3, 25, 11), // "resetOutput"
+QT_MOC_LITERAL(4, 37, 7), // "convert"
+QT_MOC_LITERAL(5, 45, 5) // "reset"
 
     },
-    "controller\0cesareOutput\0\0convert"
+    "controller\0cesareOutput\0\0resetOutput\0"
+    "convert\0reset"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,24 +48,28 @@ static const uint qt_meta_data_controller[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x06 /* Public */,
+       1,    1,   34,    2, 0x06 /* Public */,
+       3,    0,   37,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    3,   27,    2, 0x0a /* Public */,
+       4,    3,   38,    2, 0x0a /* Public */,
+       5,    0,   45,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString, QMetaType::Int, QMetaType::Bool,    2,    2,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -74,7 +81,9 @@ void controller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->cesareOutput((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: _t->convert((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
+        case 1: _t->resetOutput(); break;
+        case 2: _t->convert((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
+        case 3: _t->reset(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -84,6 +93,12 @@ void controller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             typedef void (controller::*_t)(QString );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&controller::cesareOutput)) {
                 *result = 0;
+            }
+        }
+        {
+            typedef void (controller::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&controller::resetOutput)) {
+                *result = 1;
             }
         }
     }
@@ -114,13 +129,13 @@ int controller::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }
@@ -130,5 +145,11 @@ void controller::cesareOutput(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void controller::resetOutput()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

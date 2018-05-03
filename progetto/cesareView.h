@@ -39,10 +39,22 @@ private:
 public:
     explicit cesareView(QWidget *parent = 0);
 signals:
+    //convert button
     void convertMethod(QString,int,bool);//da definire
+    //copy button
+    void copyMethod(QString);
+    //reset button
+    void resetMethod();
 public slots:
+    //convert button
     void convert();
     void cesareOutput(QString);
+    //copy button
+    void copyOutput();
+    //reset button
+    void reset();
+    void resetOutput();
+
 };
 
 #endif // CESARETAB_H
