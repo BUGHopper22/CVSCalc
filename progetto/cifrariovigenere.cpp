@@ -1,11 +1,10 @@
 #include "cifrariovigenere.h"
 #include <QDebug>
 
-//____RIDEF. OPERATOR TRA QCHAR___
+//____RIDEF. OPERATOR+- TRA QCHAR___
 ushort operator+(QChar a,QChar const & b){
     return ushort(a.unicode()+(b.unicode()));
 }
-
 ushort operator-(QChar a,QChar const & b){
     return ushort(a.unicode()-b.unicode());
 }
@@ -18,6 +17,7 @@ cifrarioVigenere::cifrarioVigenere(QString c,QString v):testo(c),ciph(c),key(v){
 void cifrarioVigenere::setText(QString s){testo::setText(s);}
 void cifrarioVigenere::setKey(QString s){key.clear();key.append(s);}
 void cifrarioVigenere::setCiph(QString s){ciph.clear();ciph.append(s);}
+void cifrarioVigenere::setCheck(bool b){check=b;}
 
 //___GETTER____
 QChar cifrarioVigenere::getCar(int i) const{ return ciph[i]; }
@@ -26,7 +26,10 @@ QString cifrarioVigenere::getCiph() const{return ciph;}
 
 //___METODI___
 void cifrarioVigenere::converti(){
-    return;// ricordardi di sistemare
+    if(check)
+        encrypt();
+    else
+        decrypt();
 }
 void cifrarioVigenere::reset(){
     testo::reset();

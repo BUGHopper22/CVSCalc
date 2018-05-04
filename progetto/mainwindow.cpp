@@ -4,6 +4,7 @@
 #include <cifrariocesare.h>
 #include <cesareView.h>
 #include <vigenereView.h>
+#include <sha1View.h>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent):QWidget(parent)
@@ -17,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent):QWidget(parent)
     menuTabs=new QTabWidget;
     menuTabs->addTab(new cesareView(),"cifrario Cesare");
     menuTabs->addTab(new vigenereView(),"cifrario Vigenere");
-    menuTabs->addTab(new cesareView(),"sha-1");
+    menuTabs->addTab(new sha1View(),"sha-1");
     mainLayout->addWidget(menuTabs);
     setLayout(mainLayout);
 

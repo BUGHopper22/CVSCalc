@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -23,7 +24,6 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -64,14 +64,15 @@ public:
     QLabel *label_7;
     QTextEdit *textEdit_4;
     QVBoxLayout *verticalLayout_8;
-    QLabel *label_8;
-    QKeySequenceEdit *keySequenceEdit;
+    QFormLayout *formLayout;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_9;
+    QPushButton *pushButton_5;
     QHBoxLayout *horizontalLayout_6;
     QRadioButton *radioButton_5;
     QRadioButton *radioButton_6;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_6;
+    QLabel *label_8;
+    QKeySequenceEdit *keySequenceEdit;
     QVBoxLayout *verticalLayout_9;
     QLabel *label_9;
     QPlainTextEdit *plainTextEdit_2;
@@ -91,22 +92,6 @@ public:
     QPushButton *pushButton_7;
     QPushButton *pushButton_2;
     QWidget *tab_4;
-    QWidget *horizontalLayoutWidget_6;
-    QHBoxLayout *horizontalLayout_8;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_3;
-    QSpacerItem *horizontalSpacer;
-    QSpacerItem *horizontalSpacer_2;
-    QTextEdit *textEdit_2;
-    QVBoxLayout *verticalLayout_10;
-    QLabel *label_10;
-    QTextEdit *textEdit_5;
-    QGroupBox *groupBox_3;
-    QWidget *verticalLayoutWidget_8;
-    QVBoxLayout *verticalLayout_11;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_10;
     QToolBar *mainToolBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -258,15 +243,23 @@ public:
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(6);
         verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
-        label_8 = new QLabel(horizontalLayoutWidget_5);
-        label_8->setObjectName(QStringLiteral("label_8"));
+        formLayout = new QFormLayout();
+        formLayout->setSpacing(6);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        pushButton_6 = new QPushButton(horizontalLayoutWidget_5);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
 
-        verticalLayout_8->addWidget(label_8);
+        formLayout->setWidget(2, QFormLayout::SpanningRole, pushButton_6);
 
-        keySequenceEdit = new QKeySequenceEdit(horizontalLayoutWidget_5);
-        keySequenceEdit->setObjectName(QStringLiteral("keySequenceEdit"));
+        pushButton_9 = new QPushButton(horizontalLayoutWidget_5);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
 
-        verticalLayout_8->addWidget(keySequenceEdit);
+        formLayout->setWidget(3, QFormLayout::SpanningRole, pushButton_9);
+
+        pushButton_5 = new QPushButton(horizontalLayoutWidget_5);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+
+        formLayout->setWidget(4, QFormLayout::SpanningRole, pushButton_5);
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(6);
@@ -282,22 +275,20 @@ public:
         horizontalLayout_6->addWidget(radioButton_6);
 
 
-        verticalLayout_8->addLayout(horizontalLayout_6);
+        formLayout->setLayout(0, QFormLayout::SpanningRole, horizontalLayout_6);
 
-        pushButton_5 = new QPushButton(horizontalLayoutWidget_5);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        label_8 = new QLabel(horizontalLayoutWidget_5);
+        label_8->setObjectName(QStringLiteral("label_8"));
 
-        verticalLayout_8->addWidget(pushButton_5);
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_8);
 
-        pushButton_9 = new QPushButton(horizontalLayoutWidget_5);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        keySequenceEdit = new QKeySequenceEdit(horizontalLayoutWidget_5);
+        keySequenceEdit->setObjectName(QStringLiteral("keySequenceEdit"));
 
-        verticalLayout_8->addWidget(pushButton_9);
+        formLayout->setWidget(1, QFormLayout::FieldRole, keySequenceEdit);
 
-        pushButton_6 = new QPushButton(horizontalLayoutWidget_5);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
 
-        verticalLayout_8->addWidget(pushButton_6);
+        verticalLayout_8->addLayout(formLayout);
 
 
         horizontalLayout_5->addLayout(verticalLayout_8);
@@ -398,84 +389,6 @@ public:
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
-        horizontalLayoutWidget_6 = new QWidget(tab_4);
-        horizontalLayoutWidget_6->setObjectName(QStringLiteral("horizontalLayoutWidget_6"));
-        horizontalLayoutWidget_6->setGeometry(QRect(9, 9, 921, 431));
-        horizontalLayout_8 = new QHBoxLayout(horizontalLayoutWidget_6);
-        horizontalLayout_8->setSpacing(6);
-        horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        horizontalLayout_8->setContentsMargins(10, 10, 10, 10);
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        label_3 = new QLabel(horizontalLayoutWidget_6);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        verticalLayout_3->addWidget(label_3);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        verticalLayout_3->addItem(horizontalSpacer);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        verticalLayout_3->addItem(horizontalSpacer_2);
-
-        textEdit_2 = new QTextEdit(horizontalLayoutWidget_6);
-        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
-
-        verticalLayout_3->addWidget(textEdit_2);
-
-
-        horizontalLayout_8->addLayout(verticalLayout_3);
-
-        verticalLayout_10 = new QVBoxLayout();
-        verticalLayout_10->setSpacing(6);
-        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
-        label_10 = new QLabel(horizontalLayoutWidget_6);
-        label_10->setObjectName(QStringLiteral("label_10"));
-
-        verticalLayout_10->addWidget(label_10);
-
-        textEdit_5 = new QTextEdit(horizontalLayoutWidget_6);
-        textEdit_5->setObjectName(QStringLiteral("textEdit_5"));
-
-        verticalLayout_10->addWidget(textEdit_5);
-
-
-        horizontalLayout_8->addLayout(verticalLayout_10);
-
-        groupBox_3 = new QGroupBox(horizontalLayoutWidget_6);
-        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
-        groupBox_3->setFlat(true);
-        verticalLayoutWidget_8 = new QWidget(groupBox_3);
-        verticalLayoutWidget_8->setObjectName(QStringLiteral("verticalLayoutWidget_8"));
-        verticalLayoutWidget_8->setGeometry(QRect(-30, 170, 160, 83));
-        verticalLayout_11 = new QVBoxLayout(verticalLayoutWidget_8);
-        verticalLayout_11->setSpacing(6);
-        verticalLayout_11->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
-        verticalLayout_11->setContentsMargins(0, 0, 0, 0);
-        pushButton_12 = new QPushButton(verticalLayoutWidget_8);
-        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
-
-        verticalLayout_11->addWidget(pushButton_12);
-
-        pushButton_11 = new QPushButton(verticalLayoutWidget_8);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-
-        verticalLayout_11->addWidget(pushButton_11);
-
-        pushButton_10 = new QPushButton(verticalLayoutWidget_8);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-
-        verticalLayout_11->addWidget(pushButton_10);
-
-
-        horizontalLayout_8->addWidget(groupBox_3);
-
         tabWidget->addTab(tab_4, QString());
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
@@ -503,12 +416,12 @@ public:
         label_6->setText(QApplication::translate("MainWindow", "Output", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "cifrario di Cesare", 0));
         label_7->setText(QApplication::translate("MainWindow", "Input", 0));
-        label_8->setText(QApplication::translate("MainWindow", "key", 0));
+        pushButton_6->setText(QApplication::translate("MainWindow", "reset", 0));
+        pushButton_9->setText(QApplication::translate("MainWindow", "output copy", 0));
+        pushButton_5->setText(QApplication::translate("MainWindow", "convert", 0));
         radioButton_5->setText(QApplication::translate("MainWindow", "encrypt", 0));
         radioButton_6->setText(QApplication::translate("MainWindow", "decrypt", 0));
-        pushButton_5->setText(QApplication::translate("MainWindow", "convert", 0));
-        pushButton_9->setText(QApplication::translate("MainWindow", "output copy", 0));
-        pushButton_6->setText(QApplication::translate("MainWindow", "reset", 0));
+        label_8->setText(QApplication::translate("MainWindow", "key", 0));
         label_9->setText(QApplication::translate("MainWindow", "Output", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "cifrario di Vigen\303\250re", 0));
         label->setText(QApplication::translate("MainWindow", "input", 0));
@@ -519,12 +432,6 @@ public:
         pushButton_7->setText(QApplication::translate("MainWindow", "output copy", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "reset", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "sha-1", 0));
-        label_3->setText(QApplication::translate("MainWindow", "TextLabel", 0));
-        label_10->setText(QApplication::translate("MainWindow", "TextLabel", 0));
-        groupBox_3->setTitle(QApplication::translate("MainWindow", "menu", 0));
-        pushButton_12->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_11->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_10->setText(QApplication::translate("MainWindow", "PushButton", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "Page", 0));
     } // retranslateUi
 

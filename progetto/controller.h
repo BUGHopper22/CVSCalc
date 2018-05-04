@@ -13,7 +13,6 @@ private:
     MainWindow* w;
     cifrarioCesare cesare;
     cifrarioVigenere vigenere;
-    //w.show();
 public:
     controller();
     ~controller();
@@ -22,11 +21,17 @@ public slots:
     //CESARE
     void convert(QString,int,bool);//convert button
     void reset();//reset button
+    //VIGENERE
+    void convertV(QString,QString,bool);//convert button
+    void resetV();//reset button
 
 signals:
+    //CESARE
     void cesareOutput(QString);//convert button
-    void resetOutput();
-
+    void resetOutput();//reset button
+    //VIGENERE
+    void vigenereOutputV(QString);//convert button
+    void resetOutputV();//reset button
 };
 
 #endif // CONTROLLER_H

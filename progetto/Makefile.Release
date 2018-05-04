@@ -51,11 +51,13 @@ SOURCES       = main.cpp \
 		cifrariovigenere.cpp \
 		controller.cpp \
 		cesareView.cpp \
-		vigenereview.cpp release\qrc_stylesheet.cpp \
+		vigenereView.cpp \
+		sha1view.cpp release\qrc_stylesheet.cpp \
 		release\moc_mainwindow.cpp \
 		release\moc_controller.cpp \
 		release\moc_cesareView.cpp \
-		release\moc_vigenereview.cpp
+		release\moc_vigenereView.cpp \
+		release\moc_sha1view.cpp
 OBJECTS       = release/main.o \
 		release/mainwindow.o \
 		release/sha1.o \
@@ -64,12 +66,14 @@ OBJECTS       = release/main.o \
 		release/cifrariovigenere.o \
 		release/controller.o \
 		release/cesareView.o \
-		release/vigenereview.o \
+		release/vigenereView.o \
+		release/sha1view.o \
 		release/qrc_stylesheet.o \
 		release/moc_mainwindow.o \
 		release/moc_controller.o \
 		release/moc_cesareView.o \
-		release/moc_vigenereview.o
+		release/moc_vigenereView.o \
+		release/moc_sha1view.o
 
 DIST          =  mainwindow.h \
 		sha1.h \
@@ -78,7 +82,8 @@ DIST          =  mainwindow.h \
 		cifrariovigenere.h \
 		controller.h \
 		cesareView.h \
-		vigenereview.h main.cpp \
+		vigenereView.h \
+		sha1view.h main.cpp \
 		mainwindow.cpp \
 		sha1.cpp \
 		testo.cpp \
@@ -86,7 +91,8 @@ DIST          =  mainwindow.h \
 		cifrariovigenere.cpp \
 		controller.cpp \
 		cesareView.cpp \
-		vigenereview.cpp
+		vigenereView.cpp \
+		sha1view.cpp
 QMAKE_TARGET  = progetto
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = progetto.exe
@@ -125,7 +131,7 @@ dist:
 	$(ZIP) progetto.zip $(SOURCES) $(DIST) progetto.pro D:\QtIde\5.5\mingw492_32\mkspecs\features\spec_pre.prf D:\QtIde\5.5\mingw492_32\mkspecs\qdevice.pri D:\QtIde\5.5\mingw492_32\mkspecs\features\device_config.prf D:\QtIde\5.5\mingw492_32\mkspecs\qconfig.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dcollision.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dcollision_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dcore.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dcore_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dinput.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dinput_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dlogic.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dlogic_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquick.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquick_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquickrenderer.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquickrenderer_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3drenderer.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_3drenderer_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_axbase.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_axbase_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_axcontainer.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_axcontainer_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_axserver.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_axserver_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_bluetooth.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_bluetooth_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_bootstrap_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_clucene_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_concurrent.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_concurrent_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_core.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_core_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_dbus.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_dbus_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_declarative.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_declarative_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_designer.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_designer_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_designercomponents_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_enginio.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_enginio_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_gui.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_gui_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_help.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_help_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_location.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_location_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_multimedia.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_multimedia_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_multimediawidgets.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_network.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_network_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_nfc.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_nfc_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_opengl.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_opengl_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_openglextensions.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_openglextensions_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_platformsupport_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_positioning.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_positioning_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_printsupport.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_printsupport_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_qml.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_qml_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_qmltest.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_qmltest_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_quick.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_quick_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_quickparticles_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_quickwidgets.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_script.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_script_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_scripttools.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_scripttools_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_sensors.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_sensors_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_serialport.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_serialport_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_sql.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_sql_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_svg.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_svg_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_testlib.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_testlib_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_uiplugin.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_uitools.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_uitools_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_webchannel.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_webchannel_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_webkit.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_webkit_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_webkitwidgets.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_websockets.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_websockets_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_widgets.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_widgets_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_winextras.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_winextras_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_xml.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_xml_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_xmlpatterns.pri D:\QtIde\5.5\mingw492_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\QtIde\5.5\mingw492_32\mkspecs\features\qt_functions.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\qt_config.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\win32\qt_config.prf D:\QtIde\5.5\mingw492_32\mkspecs\win32-g++\qmake.conf D:\QtIde\5.5\mingw492_32\mkspecs\features\spec_post.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\exclusive_builds.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\default_pre.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\win32\default_pre.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\resolve_config.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\exclusive_builds_post.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\default_post.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\build_pass.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\qml_debug.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\win32\rtti.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\precompile_header.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\warn_on.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\qt.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\resources.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\moc.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\win32\opengl.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\uic.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\win32\windows.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\testcase_targets.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\exceptions.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\yacc.prf D:\QtIde\5.5\mingw492_32\mkspecs\features\lex.prf progetto.pro stylesheet.qrc img\stylesheet.qrc D:/QtIde/5.5/mingw492_32/lib/qtmain.prl D:/QtIde/5.5/mingw492_32/lib/Qt5Widgets.prl D:/QtIde/5.5/mingw492_32/lib/Qt5Gui.prl D:/QtIde/5.5/mingw492_32/lib/Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.o release\mainwindow.o release\sha1.o release\testo.o release\cifrariocesare.o release\cifrariovigenere.o release\controller.o release\cesareView.o release\vigenereview.o release\qrc_stylesheet.o release\moc_mainwindow.o release\moc_controller.o release\moc_cesareView.o release\moc_vigenereview.o
+	-$(DEL_FILE) release\main.o release\mainwindow.o release\sha1.o release\testo.o release\cifrariocesare.o release\cifrariovigenere.o release\controller.o release\cesareView.o release\vigenereView.o release\sha1view.o release\qrc_stylesheet.o release\moc_mainwindow.o release\moc_controller.o release\moc_cesareView.o release\moc_vigenereView.o release\moc_sha1view.o
 
 distclean: clean 
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -2161,9 +2167,9 @@ release/qrc_stylesheet.cpp: stylesheet.qrc \
 release/qrc_stylesheet.cpp: img/stylesheet.qrc
 	D:\QtIde\5.5\mingw492_32\bin\rcc.exe -name stylesheet img\stylesheet.qrc -o release\qrc_stylesheet.cpp
 
-compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_controller.cpp release/moc_cesareView.cpp release/moc_vigenereview.cpp
+compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_controller.cpp release/moc_cesareView.cpp release/moc_vigenereView.cpp release/moc_sha1view.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_controller.cpp release\moc_cesareView.cpp release\moc_vigenereview.cpp
+	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_controller.cpp release\moc_cesareView.cpp release\moc_vigenereView.cpp release\moc_sha1view.cpp
 release/moc_mainwindow.cpp: D:/QtIde/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
@@ -2593,10 +2599,12 @@ release/moc_cesareView.cpp: D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgridlayout.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h \
 		cesareView.h
 	D:\QtIde\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QtIde/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/Alberto/Documents/GitHub/progettoCondiviso/progetto -ID:/QtIde/5.5/mingw492_32/include -ID:/QtIde/5.5/mingw492_32/include/QtWidgets -ID:/QtIde/5.5/mingw492_32/include/QtGui -ID:/QtIde/5.5/mingw492_32/include/QtANGLE -ID:/QtIde/5.5/mingw492_32/include/QtCore cesareView.h -o release\moc_cesareView.cpp
 
-release/moc_vigenereview.cpp: D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
+release/moc_vigenereView.cpp: D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/qglobal.h \
@@ -2731,8 +2739,152 @@ release/moc_vigenereview.cpp: D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayoutitem.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgridlayout.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout \
-		vigenereview.h
-	D:\QtIde\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QtIde/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/Alberto/Documents/GitHub/progettoCondiviso/progetto -ID:/QtIde/5.5/mingw492_32/include -ID:/QtIde/5.5/mingw492_32/include/QtWidgets -ID:/QtIde/5.5/mingw492_32/include/QtGui -ID:/QtIde/5.5/mingw492_32/include/QtANGLE -ID:/QtIde/5.5/mingw492_32/include/QtCore vigenereview.h -o release\moc_vigenereview.cpp
+		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h \
+		vigenereView.h
+	D:\QtIde\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QtIde/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/Alberto/Documents/GitHub/progettoCondiviso/progetto -ID:/QtIde/5.5/mingw492_32/include -ID:/QtIde/5.5/mingw492_32/include/QtWidgets -ID:/QtIde/5.5/mingw492_32/include/QtGui -ID:/QtIde/5.5/mingw492_32/include/QtANGLE -ID:/QtIde/5.5/mingw492_32/include/QtCore vigenereView.h -o release\moc_vigenereView.cpp
+
+release/moc_sha1view.cpp: D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qglobal.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qconfig.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qfeatures.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsystemdetection.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qprocessordetection.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcompilerdetection.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qtypeinfo.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qtypetraits.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsysinfo.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qlogging.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qflags.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qbasicatomic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_bootstrap.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qgenericatomic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_cxx11.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_gcc.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_msvc.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_armv7.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_armv6.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_armv5.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_ia64.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_mips.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_x86.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_unix.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qglobalstatic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmutex.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qnumeric.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qnamespace.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs_win.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobject.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstring.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qchar.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qbytearray.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qrefcount.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qarraydata.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qlist.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qalgorithms.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qiterator.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qbytearraylist.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstringlist.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qregexp.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstringmatcher.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcoreevent.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qscopedpointer.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmetatype.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qvarlengtharray.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcontainerfwd.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qisenum.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobject_impl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmargins.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpaintdevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qrect.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsize.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qpoint.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpalette.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qcolor.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qrgb.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qbrush.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qpair.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qvector.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qmatrix.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpolygon.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qregion.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qdatastream.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qiodevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qline.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtransform.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpainterpath.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qimage.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpixelformat.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpixmap.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsharedpointer.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qshareddata.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qhash.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfont.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfontmetrics.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfontinfo.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qsizepolicy.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qcursor.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qkeysequence.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qevent.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qvariant.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmap.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qdebug.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qtextstream.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qlocale.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qset.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcontiguouscache.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qurl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qurlquery.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qfile.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qfiledevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qvector2d.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QMainWindow \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qicon.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QTextEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qtextedit.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qframe.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextdocument.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextoption.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextcursor.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextformat.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpen.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLabel \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlabel.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QSpinBox \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qspinbox.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qabstractspinbox.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qvalidator.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qregularexpression.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QRadioButton \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qradiobutton.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qabstractbutton.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QPushButton \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qpushbutton.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QKeySequenceEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qkeysequenceedit.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QVBoxLayout \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qboxlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayoutitem.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgridlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h \
+		sha1view.h
+	D:\QtIde\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/QtIde/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/Alberto/Documents/GitHub/progettoCondiviso/progetto -ID:/QtIde/5.5/mingw492_32/include -ID:/QtIde/5.5/mingw492_32/include/QtWidgets -ID:/QtIde/5.5/mingw492_32/include/QtGui -ID:/QtIde/5.5/mingw492_32/include/QtANGLE -ID:/QtIde/5.5/mingw492_32/include/QtCore sha1view.h -o release\moc_sha1view.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -3064,6 +3216,9 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qinputmethod.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QButtonGroup \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qbuttongroup.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QFormLayout \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qformlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLayout \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QGroupBox \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgroupbox.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHeaderView \
@@ -3087,7 +3242,6 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qglyphrun.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qrawfont.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qfontdatabase.h \
-		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QSpacerItem \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QTabWidget \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QToolBar \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qtoolbar.h \
@@ -3527,7 +3681,9 @@ release/controller.o: controller.cpp controller.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
 		sha1.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QByteArray \
-		cesareView.h
+		cesareView.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\controller.o controller.cpp
 
 release/cesareView.o: cesareView.cpp cesareView.h \
@@ -3667,6 +3823,8 @@ release/cesareView.o: cesareView.cpp cesareView.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgridlayout.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h \
 		cifrariocesare.h \
 		testo.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/Qvector \
@@ -3687,7 +3845,7 @@ release/cesareView.o: cesareView.cpp cesareView.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QByteArray
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\cesareView.o cesareView.cpp
 
-release/vigenereview.o: vigenereview.cpp vigenereview.h \
+release/vigenereView.o: vigenereView.cpp vigenereView.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs.h \
@@ -3822,8 +3980,152 @@ release/vigenereview.o: vigenereview.cpp vigenereview.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayout.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayoutitem.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgridlayout.h \
-		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\vigenereview.o vigenereview.cpp
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\vigenereView.o vigenereView.cpp
+
+release/sha1view.o: sha1view.cpp sha1view.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qglobal.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qconfig.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qfeatures.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsystemdetection.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qprocessordetection.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcompilerdetection.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qtypeinfo.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qtypetraits.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsysinfo.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qlogging.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qflags.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qbasicatomic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_bootstrap.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qgenericatomic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_cxx11.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_gcc.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_msvc.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_armv7.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_armv6.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_armv5.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_ia64.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_mips.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_x86.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qatomic_unix.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qglobalstatic.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmutex.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qnumeric.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qnamespace.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs_win.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobject.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstring.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qchar.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qbytearray.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qrefcount.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qarraydata.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qlist.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qalgorithms.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qiterator.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qbytearraylist.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstringlist.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qregexp.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qstringmatcher.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcoreevent.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qscopedpointer.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmetatype.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qvarlengtharray.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcontainerfwd.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qisenum.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qobject_impl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmargins.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpaintdevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qrect.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsize.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qpoint.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpalette.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qcolor.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qrgb.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qbrush.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qpair.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qvector.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qmatrix.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpolygon.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qregion.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qdatastream.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qiodevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qline.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtransform.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpainterpath.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qimage.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpixelformat.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpixmap.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsharedpointer.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qshareddata.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qhash.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfont.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfontmetrics.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfontinfo.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qsizepolicy.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qcursor.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qkeysequence.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qevent.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qvariant.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qmap.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qdebug.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qtextstream.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qlocale.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qset.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qcontiguouscache.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qurl.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qurlquery.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qfile.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qfiledevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qvector2d.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QMainWindow \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qicon.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QTextEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qtextedit.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qframe.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextdocument.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextoption.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextcursor.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qtextformat.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qpen.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLabel \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlabel.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QSpinBox \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qspinbox.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qabstractspinbox.h \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qvalidator.h \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/qregularexpression.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QRadioButton \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qradiobutton.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qabstractbutton.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QPushButton \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qpushbutton.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QKeySequenceEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qkeysequenceedit.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QVBoxLayout \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qboxlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlayoutitem.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qgridlayout.h \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QHBoxLayout \
+		D:/QtIde/5.5/mingw492_32/include/QtCore/QString \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qlineedit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\sha1view.o sha1view.cpp
 
 release/qrc_stylesheet.o: release/qrc_stylesheet.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_stylesheet.o release\qrc_stylesheet.cpp
@@ -3837,8 +4139,11 @@ release/moc_controller.o: release/moc_controller.cpp
 release/moc_cesareView.o: release/moc_cesareView.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_cesareView.o release\moc_cesareView.cpp
 
-release/moc_vigenereview.o: release/moc_vigenereview.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_vigenereview.o release\moc_vigenereview.cpp
+release/moc_vigenereView.o: release/moc_vigenereView.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_vigenereView.o release\moc_vigenereView.cpp
+
+release/moc_sha1view.o: release/moc_sha1view.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_sha1view.o release\moc_sha1view.cpp
 
 ####### Install
 

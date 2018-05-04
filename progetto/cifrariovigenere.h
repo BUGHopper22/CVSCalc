@@ -7,20 +7,20 @@ class cifrarioVigenere:public testo{
 private:
     QString ciph;
     QString key;
+    bool check;
 public:
     cifrarioVigenere(QString="",QString="verme");
 
     static const ushort fix;
 
-    //void setKey(QString ); PUO ESSERE UTILE
-
-    //forse è meglio impostare il costruttore con i campi dati vuoti e successivamente
+ //forse è meglio impostare il costruttore con i campi dati vuoti e successivamente
     //settare con i metodi set i campi dati successivamente quando andrò a convertire
 
     //___SETTER___
     void setText(QString);
     void setKey(QString);
     void setCiph(QString);
+    void setCheck(bool);
 
     //___GETTER___
     QChar getCar(int i)const;
@@ -35,13 +35,6 @@ public:
     void copy() const;  //DA FARE
 
 };
-
-
-/*
-ushort operator-(QChar c,unsigned short int i){
-    return ushort(c.unicode()-i);
-}*/
-
 
 #endif // CIFRARIOVIGENERE_H
 

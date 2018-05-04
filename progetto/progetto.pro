@@ -31,7 +31,8 @@ SOURCES += \
     cifrariovigenere.cpp \
     controller.cpp \
     cesareView.cpp \
-    vigenereview.cpp
+    vigenereView.cpp \
+    sha1view.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,7 +42,8 @@ HEADERS += \
     cifrariovigenere.h \
     controller.h \
     cesareView.h \
-    vigenereview.h
+    vigenereView.h \
+    sha1view.h
 
 FORMS += \
         mainwindow.ui

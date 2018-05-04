@@ -1,12 +1,13 @@
-#include "vigenereview.h"
+#include "vigenereView.h"
 
 vigenereView::vigenereView(QWidget *parent):QWidget(parent){
+
     inputTitle=new QLabel("input");
     outputTitle= new QLabel("output");
     keyTitle=new QLabel("key");
     inputText=new QTextEdit;
     outputText=new QTextEdit;
-    keyText=new QKeySequenceEdit;
+    keyText=new QLineEdit;
     encRadButton=new QRadioButton("encrypt");
     decRadButton= new QRadioButton("decrypt");
     convertButton=new QPushButton("converti");
@@ -19,8 +20,6 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2=new QVBoxLayout;
     vBox3=new QVBoxLayout;
 
-
-    //vigenereTab->addLayout(content);
     content->setAlignment(Qt::AlignCenter);
     vBox2->setAlignment(Qt::AlignCenter);
     encDecBox->setAlignment(Qt::AlignTop);
@@ -47,6 +46,43 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(convertButton);
     vBox2->addWidget(copyButton);
     vBox2->addWidget(resetButton);
+    outputText->setReadOnly(true);
 
     setLayout(content);
+
+    //CONVERT BUTTON
+    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convertV()));
+    //COPY BUTTON
+    connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutputV()));
+    //CONVERT BUTTON
+    connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(resetV()));
+}
+
+//CONVERT BUTTON
+void vigenereView::convertV(){
+    if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
+        emit convertMethodV(inputText->toPlainText(),keyText->text(),encRadButton->isChecked());
+    else{/*errore input*/ }
+}
+void vigenereView::vigenereOutputV(QString s){
+    outputText->clear();
+    outputText->insertPlainText(s);
+}
+
+//COPY BUTTON
+void vigenereView::copyOutputV(){
+    if(outputText->toPlainText()!="")
+        outputText->selectAll();
+    outputText->copy();
+
+        //emit outputText->copyAvailable(true);
+}
+//RESET BUTTON
+void vigenereView::resetV(){
+    emit resetMethodV();
+}
+void vigenereView::resetOutputV(){
+    inputText->clear();
+    outputText->clear();
+    keyText->clear();
 }

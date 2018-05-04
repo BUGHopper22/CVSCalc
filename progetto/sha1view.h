@@ -1,5 +1,5 @@
-#ifndef CESAREVIEW_H
-#define CESAREVIEW_H
+#ifndef SHA1VIEW_H
+#define SHA1VIEW_H
 #include <QWidget>
 #include <QMainWindow>
 #include <QWidget>
@@ -14,48 +14,29 @@
 #include <QString>
 #include <QLineEdit>
 
-class cesareView:public QWidget{
+class sha1View:public QWidget{
     Q_OBJECT
 private:
     //__box
     QHBoxLayout* content;
-    QHBoxLayout* encDecBox;
+    QHBoxLayout* utfBox;
     QVBoxLayout* vBox1;
     QVBoxLayout* vBox2;
     QVBoxLayout* vBox3;
     //__obj
     QTextEdit* inputText;
-    QTextEdit* outputText;
+    QLineEdit* outputText;
     QLabel* keyTitle;
     QLabel* inputTitle;
     QLabel* outputTitle;
     QSpinBox* keyText;
-    QRadioButton* encRadButton;
-    QRadioButton* decRadButton;
+    QRadioButton* utf8Button;
+    QRadioButton* utf16Button;
     QPushButton* convertButton;
     QPushButton* copyButton;
     QPushButton* resetButton;
-
-
 public:
-    explicit cesareView(QWidget *parent = 0);
-signals:
-    //convert button
-    void convertMethod(QString,int,bool);
-    //copy button
-    void copyMethod(QString);
-    //reset button
-    void resetMethod();
-public slots:
-    //convert button
-    void convert();
-    void cesareOutput(QString);
-    //copy button
-    void copyOutput();
-    //reset button
-    void reset();
-    void resetOutput();
-
+    explicit sha1View(QWidget*parent = 0);
 };
 
-#endif // CESARETAB_H
+#endif // SHA1VIEW_H

@@ -23,7 +23,6 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     vBox2=new QVBoxLayout;
     vBox3=new QVBoxLayout;
 
-
     //cesareTab->addLayout(content);
     content->setAlignment(Qt::AlignCenter);
     vBox2->setAlignment(Qt::AlignCenter);
@@ -93,15 +92,3 @@ void cesareView::resetOutput(){
     outputText->clear();
     keyText->clear();
 }
-/*void convertMethod(QString s,ushort k,bool ed){
-    s=inputText->toPlainText();
-    k=keyText->value();
-
-}
-*/
-
-
-/*void cesareView::cesareOutput(){
-    outputText->clear();
-    outputText(cesare.getCiph());
-}*/

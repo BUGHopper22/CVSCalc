@@ -7,10 +7,12 @@ INPUT(
 ./release\cifrariovigenere.o
 ./release\controller.o
 ./release\cesareView.o
-./release\vigenereview.o
+./release\vigenereView.o
+./release\sha1view.o
 ./release\qrc_stylesheet.o
 ./release\moc_mainwindow.o
 ./release\moc_controller.o
 ./release\moc_cesareView.o
-./release\moc_vigenereview.o
+./release\moc_vigenereView.o
+./release\moc_sha1view.o
 );
