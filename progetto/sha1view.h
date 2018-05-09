@@ -25,7 +25,7 @@ private:
     QVBoxLayout* vBox3;
     //__obj
     QTextEdit* inputText;
-    QLineEdit* outputText;
+    QTextEdit* outputText;
     QLabel* keyTitle;
     QLabel* inputTitle;
     QLabel* outputTitle;
@@ -37,6 +37,13 @@ private:
     QPushButton* resetButton;
 public:
     explicit sha1View(QWidget*parent = 0);
+signals:
+    //convert button
+    void convertMethodS(QString);
+public slots:
+    //convert button
+    void convertS();
+    void sha1OutputS(QString);
 };
 
 #endif // SHA1VIEW_H

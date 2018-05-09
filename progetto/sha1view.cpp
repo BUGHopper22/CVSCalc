@@ -1,11 +1,11 @@
-#include "sha1view.h"
+#include "sha1View.h"
 
 sha1View::sha1View(QWidget*parent):QWidget(parent){
     inputTitle=new QLabel("input");
     outputTitle= new QLabel("output");
     keyTitle=new QLabel("key");
     inputText=new QTextEdit;
-    outputText=new QLineEdit;
+    outputText=new QTextEdit;
     keyText=new QSpinBox;
     utf8Button=new QRadioButton("utf-8");
     utf16Button= new QRadioButton("utf-16");
@@ -47,4 +47,14 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
 
 
     setLayout(content);
+}
+
+void sha1View::convertS(){
+    if(inputText->toPlainText()!="" && (utf8Button->isChecked()||utf16Button->isChecked()))
+        emit convertMethodS(inputText->toPlainText());
+    else{/*errore input*/ }
+}
+void sha1View::sha1OutputS(QString s){
+    outputText->clear();
+    outputText->insertPlainText(s);
 }

@@ -16,10 +16,10 @@ int main(int argc, char *argv[])
 
 
     //___STYLESHEET___
-    /*QFile File(":/styleSheet/Stylesheet.qss");
+    QFile File(":/style.qss");
     File.open(QFile::ReadOnly);
     QString StyleSheet=QLatin1String(File.readAll());
-    a.setStyleSheet(StyleSheet);*/
+    a.setStyleSheet(StyleSheet);
     //___FINE_STYLESHEET___
 
     controllerApp.showC();

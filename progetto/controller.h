@@ -13,6 +13,7 @@ private:
     MainWindow* w;
     cifrarioCesare cesare;
     cifrarioVigenere vigenere;
+    sha1 sha;
 public:
     controller();
     ~controller();
@@ -24,6 +25,8 @@ public slots:
     //VIGENERE
     void convertV(QString,QString,bool);//convert button
     void resetV();//reset button
+    //SHA1
+    void convertS(QString);//convert button
 
 signals:
     //CESARE
@@ -32,6 +35,8 @@ signals:
     //VIGENERE
     void vigenereOutputV(QString);//convert button
     void resetOutputV();//reset button
+    //SHA1
+    void sha1OutputS(QString);
 };
 
 #endif // CONTROLLER_H

@@ -6,7 +6,6 @@
 #-------------------------------------------------
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
 TARGET = progetto
 TEMPLATE = app
 
@@ -23,34 +22,47 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    sha1.cpp \
-    testo.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    cesareView.cpp \
     cifrariocesare.cpp \
     cifrariovigenere.cpp \
     controller.cpp \
-    cesareView.cpp \
-    vigenereView.cpp \
-    sha1view.cpp
+    sha1.cpp \
+    sha1view.cpp \
+    testo.cpp \
+    vigenereview.cpp\
 
 HEADERS += \
-        mainwindow.h \
-    sha1.h \
-    testo.h \
+    cesareView.h \
     cifrariocesare.h \
     cifrariovigenere.h \
     controller.h \
-    cesareView.h \
-    vigenereView.h \
-    sha1view.h
+    mainwindow.h \
+    sha1.h \
+    sha1view.h \
+    testo.h \
+    ui_mainwindow.h \
+    vigenereView.h
 
 FORMS += \
         mainwindow.ui
 
-DISTFILES +=
+DISTFILES += \
+    img/checkBoxDisable.png \
+    img/checkBoxHover.png \
+    img/buttonActivate.png \
+    img/buttonHover.png \
+    img/buttonNormal.png \
+    img/checkChecked.png \
+    img/checkBoxUnchecked.png \
+    img/spinBoxBackground.png \
+    img/spinBoxDownButtonChecked.png \
+    img/spinBoxDownButtonNormal.png \
+    img/spinBoxUpButtonHover.png \
+    img/spinBoxUpButtonNormal.png \
+    img/arrowDown.png \
+    img/arrowUp.png
 
 RESOURCES += \
-    stylesheet.qrc \
-    img/stylesheet.qrc
-qrc_stylesheet.cpp
+    stylesheet.qrc

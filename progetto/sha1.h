@@ -11,12 +11,12 @@
 
 #ifndef _SHA_enum_
 #define _SHA_enum_
-enum{
+/*enum{
     shaSuccess = 0,
-    shaNull, /* Null pointer parameter */
-    shaInputTooLong, /* input data too long */
-    shaStateError /* called Input after Result */
-};
+    shaNull, // Null pointer parameter
+    shaInputTooLong, // input data too long
+    shaStateError // called Input after Result
+};*/
 #endif
 
 class sha1:public testo{
@@ -29,25 +29,41 @@ private:
     uint8_t Message_Block[64]; /* 512-bit message blocks */
     int Computed; /* Is the digest computed? */
     int Corrupted; /* Is the message digest corrupted? */
+
     //_____metodi dell RFC-3174_____//
-    int SHA1Reset();
+    void SHA1Reset();
     void SHA1PadMessage();
     void SHA1ProcessMessageBlock();
-    int SHA1Input(const uint8_t *,unsigned int);
-    int SHA1Input(const QVector<uint8_t> );
-    int SHA1Result(uint8_t Message_Digest[SHA1HashSize]);
-//caccapupù
+    void SHA1Input(const uint8_t *,unsigned int);
+    void SHA1Input(const QVector<uint8_t> );
+    void SHA1Result(uint8_t Message_Digest[SHA1HashSize]);
+
     //________IMPORTANTE_____________//
     //QString usa QChar in codifica: UTF-16.
     //Quindi quando uso encrypt sulla QString sto andando a fare l' hash su quella codifica
 
+    //campi dati aggiunti
     QVector<uint8_t> ciph;
 
 
+
 public:
-    sha1(QString ="");
+
+    //___SETTER___
+    void setText(QString);
+    void setCiph(QString);
+    //void setCheck(bool b);
+
+    //___GETTER___
+    //bool getCheck()const;
+    QString getCiph()const;
+    QString getText()const;
+
+    sha1(QString="");
+    virtual void converti();
     virtual void encrypt();
     virtual void decrypt();
+    virtual void reset();
 };
 
 #endif // SHA1_H

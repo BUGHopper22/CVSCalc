@@ -1,13 +1,16 @@
-#include "vigenereView.h"
+#include "cesareView.h"
+#include "cifrariocesare.h"
+#include "controller.h"
 
-vigenereView::vigenereView(QWidget *parent):QWidget(parent){
+
+cesareView::cesareView(QWidget *parent):QWidget(parent){
 
     inputTitle=new QLabel("input");
     outputTitle= new QLabel("output");
     keyTitle=new QLabel("key");
     inputText=new QTextEdit;
     outputText=new QTextEdit;
-    keyText=new QLineEdit;
+    keyText=new QSpinBox;
     encRadButton=new QRadioButton("encrypt");
     decRadButton= new QRadioButton("decrypt");
     convertButton=new QPushButton("converti");
@@ -20,6 +23,7 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2=new QVBoxLayout;
     vBox3=new QVBoxLayout;
 
+    //cesareTab->addLayout(content);
     content->setAlignment(Qt::AlignCenter);
     vBox2->setAlignment(Qt::AlignCenter);
     encDecBox->setAlignment(Qt::AlignTop);
@@ -48,29 +52,31 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(resetButton);
     outputText->setReadOnly(true);
 
+
+
     setLayout(content);
 
     //CONVERT BUTTON
-    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convertV()));
+    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convert()));
     //COPY BUTTON
-    connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutputV()));
+    connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutput()));
     //CONVERT BUTTON
-    connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(resetV()));
+    connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(reset()));
 }
 
 //CONVERT BUTTON
-void vigenereView::convertV(){
+void cesareView::convert(){
     if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
-        emit convertMethodV(inputText->toPlainText(),keyText->text(),encRadButton->isChecked());
+        emit convertMethod(inputText->toPlainText(),keyText->value(),encRadButton->isChecked());
     else{/*errore input*/ }
 }
-void vigenereView::vigenereOutputV(QString s){
+void cesareView::cesareOutput(QString s){
     outputText->clear();
     outputText->insertPlainText(s);
 }
 
 //COPY BUTTON
-void vigenereView::copyOutputV(){
+void cesareView::copyOutput(){
     if(outputText->toPlainText()!="")
         outputText->selectAll();
     outputText->copy();
@@ -78,10 +84,10 @@ void vigenereView::copyOutputV(){
         //emit outputText->copyAvailable(true);
 }
 //RESET BUTTON
-void vigenereView::resetV(){
-    emit resetMethodV();
+void cesareView::reset(){
+    emit resetMethod();
 }
-void vigenereView::resetOutputV(){
+void cesareView::resetOutput(){
     inputText->clear();
     outputText->clear();
     keyText->clear();

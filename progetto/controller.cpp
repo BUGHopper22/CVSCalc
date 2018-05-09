@@ -3,7 +3,7 @@
 #include "cesareView.h"
 #include "sha1.h"
 
-controller::controller():w(new MainWindow()),cesare(),vigenere(){
+controller::controller():w(new MainWindow()),cesare(),vigenere(),sha(){
 //_____CESARE_____//
     //CONVERT BUTTON
     connect(w->getTabWidget()->widget(0),SIGNAL(convertMethod(QString,int,bool)),this,SLOT(convert(QString,int,bool)));
@@ -18,6 +18,9 @@ controller::controller():w(new MainWindow()),cesare(),vigenere(){
     //RESET BUTTON
     connect(w->getTabWidget()->widget(1),SIGNAL(resetMethodV()),this,SLOT(resetV()));
     connect(this,SIGNAL(resetOutputV()),w->getTabWidget()->widget(1),SLOT(resetOutputV()));
+//_____SHA1_____//
+    connect(w->getTabWidget()->widget(2),SIGNAL(convertMethodS(QString)),this,SLOT(convertS(QString)));
+    connect(this,SIGNAL(sha1OutputS(QString)),w->getTabWidget()->widget(2),SLOT(sha1OutputS(QString)));
 }
 
 void controller::showC(){w->show();}
@@ -52,6 +55,15 @@ void controller::resetV(){
     emit resetOutputV();
 }
 
+//_____SHA_____
+void controller::convertS(QString s){
+    sha.reset();
+    sha.setText(s);
+    sha.setCiph(s);
+    sha.converti();
+    emit vigenereOutputV(vigenere.getCiph());
+
+}
 
 
 

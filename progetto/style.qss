@@ -1,0 +1,123 @@
+QLabel,QTabWidget,QTabBar {
+color: white;
+}
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+    background-color:#2b2937;
+}
+
+QTabWidget::tab-bar {
+    left: 5px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    width:100px;
+    background-color:#2b2937;
+    border: 2px solid blue;
+    border-bottom-color: #252c45; /* same as the pane color */
+    min-width: 8ex;
+    padding: 10px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: red;
+    background-color:#394264;
+    border-bottom-color: red; /* same as pane color */
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}
+
+
+/*__________________________________________________*/
+
+QPushButton{
+
+    width:225px;
+    height:63px;
+    border-image: url(:/img/buttonNormal.png);
+}
+QPushButton:hover{
+border-image: url(:/img/buttonHover.png);
+}
+
+QPushButton:pressed{
+border-image: url(:/img/buttonActivate.png);
+}
+
+
+/*_________________________________________________________________*/
+QRadioButton::indicator{
+
+height: 25px;
+width: 25px;
+}
+
+QRadioButton::indicator::unchecked {
+    image: url(:/img/checkBoxUnchecked.png);
+}
+
+
+
+
+QRadioButton::indicator::checked {
+image: url(:/img/checkChecked.png);
+}
+
+/*_________________________________________________________________*/
+
+
+QSpinBox {
+height:40px;
+width:101px;
+    border-image: url(:/img/spinBoxBackground.png);
+}
+
+QSpinBox::up-button {
+height:20px;
+width:46px;
+    border-image: url(:/img/spinBoxUpButtonNormal.png);
+}
+
+
+QSpinBox::up-button:pressed {
+height:20px;
+width:46px;
+     border-image: url(:/img/spinBoxUpButtonHover.png);
+}
+
+QSpinBox::up-arrow {
+height:7px;
+width:10px;
+     border-image: url(:/img/arrowUp.png);
+}
+
+QSpinBox::down-button {
+height:20px;
+width:46px;
+   border-image: url(:/img/spinBoxDownButtonNormal.png);
+}
+
+
+QSpinBox::down-button:pressed {
+height:20px;
+width:46px;
+    border-image: url(:/img/spinBoxUpButtonHover.png);
+}
+
+QSpinBox::down-arrow {
+height:7px;
+width:10px;
+    border-image: url(:/img/arrowDown.png);
+}
+

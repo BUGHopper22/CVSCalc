@@ -20,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent):QWidget(parent)
     menuTabs->addTab(new vigenereView(),"cifrario Vigenere");
     menuTabs->addTab(new sha1View(),"sha-1");
     mainLayout->addWidget(menuTabs);
+
+//Label->setText("<font color='red'>Some text</font>");
+
     setLayout(mainLayout);
 
 
