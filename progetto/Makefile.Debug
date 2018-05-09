@@ -88,7 +88,12 @@ DIST          = img/checkBoxDisable.png \
 		img/spinBoxUpButtonHover.png \
 		img/spinBoxUpButtonNormal.png \
 		img/arrowDown.png \
-		img/arrowUp.png cesareView.h \
+		img/arrowUp.png \
+		img/font/Dense-Regular.otf \
+		img/font/Titillium-Bold.otf \
+		img/font/Titillium-Light.otf \
+		img/font/Titillium-Regular.otf \
+		img/font/Titillium-Thin.otf cesareView.h \
 		cifrariocesare.h \
 		cifrariovigenere.h \
 		controller.h \
@@ -176,7 +181,12 @@ debug/qrc_stylesheet.cpp: stylesheet.qrc \
 		img/spinBoxUpButtonNormal.png \
 		img/checkChecked.png \
 		img/arrowDown.png \
-		img/checkBoxUnchecked.png
+		img/checkBoxUnchecked.png \
+		img/font/Titillium-Regular.otf \
+		img/font/Titillium-Bold.otf \
+		img/font/Titillium-Thin.otf \
+		img/font/Dense-Regular.otf \
+		img/font/Titillium-Light.otf
 	D:\QtIde\5.5\mingw492_32\bin\rcc.exe -name stylesheet stylesheet.qrc -o debug\qrc_stylesheet.cpp
 
 compiler_moc_header_make_all: debug/moc_cesareView.cpp debug/moc_controller.cpp debug/moc_mainwindow.cpp debug/moc_sha1view.cpp debug/moc_vigenereView.cpp
@@ -1075,7 +1085,9 @@ debug/main.o: main.cpp mainwindow.h \
 		cifrariovigenere.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QDebug \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QFile \
-		D:/QtIde/5.5/mingw492_32/include/QtCore/QIODevice
+		D:/QtIde/5.5/mingw492_32/include/QtCore/QIODevice \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/QFontDatabase \
+		D:/QtIde/5.5/mingw492_32/include/QtGui/qfontdatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/mainwindow.o: mainwindow.cpp mainwindow.h \

@@ -62,7 +62,12 @@ DISTFILES += \
     img/spinBoxUpButtonHover.png \
     img/spinBoxUpButtonNormal.png \
     img/arrowDown.png \
-    img/arrowUp.png
+    img/arrowUp.png \
+    img/font/Dense-Regular.otf \
+    img/font/Titillium-Bold.otf \
+    img/font/Titillium-Light.otf \
+    img/font/Titillium-Regular.otf \
+    img/font/Titillium-Thin.otf
 
 RESOURCES += \
     stylesheet.qrc
