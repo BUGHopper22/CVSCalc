@@ -1,65 +1,80 @@
 MainWindow{
 border: 5px red;
-background-color:#2b2937;
+background-color:#2e3641;
 }
 
 QLabel,QTabWidget,QTabBar,QRadioButton {
-color: #9095aa;
+color: #9eb2c0;
+/*font-family:dense;*/
+font-size:30px;
+}
+QSpinBox,QLineEdit{
+    width:250px;
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+QTextEdit{
+    height:300px;
+    width:250px,
+}
+
+QTextEdit{
+color:#2e3641;
 font-family:dense;
-font-size:20px;
+font-size:30px;
 }
-/*non funziona*/
-QVBoxLayout->vBox2{
-    padding:100px;
-}
+
 
 QPushButton,QSpinBox{
-color: #ffffff;
+color: #e9f0f4;
 font-family:dense;
 font-size:20px;
 }
 
+/*finestra principale tab*/
 QTabWidget::pane { /* The tab widget frame */
-
-    background-color:/*#394264*/#2b2937;
+    padding-top:30px;
+    background-color:/*#394264*/#2e3641;
     border-radius:0px;
 
 }
-QTextEdit,QLineEdit{
-border: none;/*1px solid #1abc9c;*/
-background-color:#394264;
+QTextEdit,QLineEdit,QSpinBox{
+background-color:#e9f0f4;
 }
+QLineEdit{height:40px;}
+
 
 QTabWidget::tab-bar {
 
-    border-color:#1a1822;
+    border-color:red;
     border-style:solid;
-     border-width: 0px 0px 5px 0px;
-     width:1000px;
+    border-width: 0px 0px 5px 0px;
+     width:900px;
 }
 
 /* Style the tab using the tab sub-control. Note that
     it reads QTabBar _not_ QTabWidget */
+    /*___singole tab___*/
 QTabBar::tab {
-    /*width:200px;*/
-    background-color:#2b2937;
-    /*border: 2px solid blue;*/
-    border-bottom-color: #252c45; /* same as the pane color */
+    width:200px;
+    background-color:	#2e3641;
+
+    /*border-right: 2px solid #1abc9c;*/
+    border-bottom: 2px solid #9eb2c0;
     min-width: 8ex;
     padding: 10px;
 }
 
-QTabBar::tab:selected {
 
-}
-
-QTabBar::tab:hover{color: #ffffff;}
+QTabBar::tab:hover{border-bottom: 2px solid #1abc9c;}
 
 QTabBar::tab:selected {
-    /*border-color: red;*/
-    background-color:#394264;
-    color: #ffffff;
-    border-bottom-color: red; /* same as pane color */
+    border-bottom: 2px solid #1abc9c;
+    background-color:#2e3641;
+    color: #1abc9c;
+
 }
 
 QTabBar::tab:!selected {
@@ -107,8 +122,10 @@ image: url(:/img/checkChecked.png);
 
 QSpinBox {
 height:40px;
-width:101px;
-    border-image: url(:/img/spinBoxBackground.png);
+border: 1px solid #1abc9c;
+border-radius:5px;
+background-color:#2e3641	;
+    /*border-image: url(:/img/spinBoxBackground.png);*/
 }
 
 QSpinBox::up-button {

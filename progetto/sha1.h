@@ -38,14 +38,9 @@ private:
     void SHA1Input(const QVector<uint8_t> );
     void SHA1Result(uint8_t Message_Digest[SHA1HashSize]);
 
-    //________IMPORTANTE_____________//
-    //QString usa QChar in codifica: UTF-16.
-    //Quindi quando uso encrypt sulla QString sto andando a fare l' hash su quella codifica
-
+    //QString usa QChar in codifica: UTF-16. Quindi quando uso encrypt sulla QString sto andando a fare l' hash su quella codifica
     //campi dati aggiunti
     QVector<uint8_t> ciph;
-
-
 
 public:
 
@@ -55,9 +50,9 @@ public:
     //void setCheck(bool b);
 
     //___GETTER___
-    //bool getCheck()const;
     QString getCiph()const;
     QString getText()const;
+    //bool getCheck()const;
 
     sha1(QString="");
     virtual void converti();

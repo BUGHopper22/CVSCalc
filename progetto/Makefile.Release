@@ -93,7 +93,8 @@ DIST          = img/checkBoxDisable.png \
 		img/font/Titillium-Bold.otf \
 		img/font/Titillium-Light.otf \
 		img/font/Titillium-Regular.otf \
-		img/font/Titillium-Thin.otf cesareView.h \
+		img/font/Titillium-Thin.otf \
+		img/font/Aaargh.ttf cesareView.h \
 		cifrariocesare.h \
 		cifrariovigenere.h \
 		controller.h \
@@ -183,6 +184,7 @@ release/qrc_stylesheet.cpp: stylesheet.qrc \
 		img/arrowDown.png \
 		img/checkBoxUnchecked.png \
 		img/font/Titillium-Regular.otf \
+		img/font/Aaargh.ttf \
 		img/font/Titillium-Bold.otf \
 		img/font/Titillium-Thin.otf \
 		img/font/Dense-Regular.otf \
@@ -1280,7 +1282,7 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		sha1View.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
 
-release/cesareView.o: cesareView.cpp vigenereView.h \
+release/cesareView.o: cesareView.cpp cesareView.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs.h \
@@ -1993,7 +1995,7 @@ release/testo.o: testo.cpp testo.h \
 		D:/QtIde/5.5/mingw492_32/include/QtCore/QChar
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\testo.o testo.cpp
 
-release/vigenereview.o: vigenereview.cpp cesareView.h \
+release/vigenereview.o: vigenereview.cpp vigenereView.h \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/QWidget \
 		D:/QtIde/5.5/mingw492_32/include/QtWidgets/qwidget.h \
 		D:/QtIde/5.5/mingw492_32/include/QtGui/qwindowdefs.h \

@@ -47,6 +47,9 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
 
 
     setLayout(content);
+
+    //CONVERT BUTTON
+    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convertS()));
 }
 
 void sha1View::convertS(){

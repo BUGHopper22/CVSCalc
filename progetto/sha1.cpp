@@ -13,8 +13,12 @@
 
 sha1::sha1(QString c):testo(c){
 
-    //unsigned int sizeVector=(sizeof(QChar)*c.size());
+    SHA1Reset();
+    QByteArray ar=getText().toLatin1();
+    for(int i=0;i<ar.size();i++)
+        ciph.append(ar[i]);
 
+    //unsigned int sizeVector=(sizeof(QChar)*c.size());
     //QString fatto di QChar=>2byte, da convertire a uint8_t
 
     //ALGORITMO PER UNICODE A DUE BYTE
@@ -28,12 +32,6 @@ sha1::sha1(QString c):testo(c){
         ciph.append(primo);
         ciph.append(secondo);
     }*/
-
-    QByteArray ar=getText().toLatin1();
-    //QByteArray::iterator it=ar.begin();
-    for(int i=0;i<ar.size();i++)
-        ciph.append(ar[i]);
-
     //ALGORITMO PER UTF-8
     /*qDebug()<<"costruttore";
     QString::iterator it=c.begin();
@@ -44,29 +42,11 @@ sha1::sha1(QString c):testo(c){
     for(int i=0;i<3;i++){
         qDebug()<<ciph[i];
     }*/
-    SHA1Reset();
-
 }
 
-void sha1::SHA1Reset(){
-    if(!this)
-        return; //shaNull;
-    Length_Low=0;
-    Length_High = 0;
-    Message_Block_Index = 0;
-    Intermediate_Hash[0] = 0x67452301;
-    Intermediate_Hash[1] = 0xEFCDAB89;
-    Intermediate_Hash[2] = 0x98BADCFE;
-    Intermediate_Hash[3] = 0x10325476;
-    Intermediate_Hash[4] = 0xC3D2E1F0;
-    Computed = 0;
-    Corrupted = 0;
-    return;
-}
 
-//This function accepts an array of octets as the next portion
-//of the message.
 
+//This function accepts an array of octets as the next portion of the message.
 void sha1::SHA1Input(const uint8_t* message_array, unsigned length){
     //per il debug
     /*qDebug()<<"lenght"<<length<<" ";
@@ -103,15 +83,95 @@ void sha1::SHA1Input(const uint8_t* message_array, unsigned length){
 
 //overriding di shaInput con QVector
 void sha1::SHA1Input(const QVector<uint8_t> arr){
-    //copy into array
     char array[arr.size()+1];
     for(unsigned int i=0;i<strlen(array);i++){
-
         SHA1Input((const unsigned char *)&array[i] ,strlen(array));
     }
 
 }
 
+void sha1::encrypt(){
+    //devo fare lo sha1 reset?
+    SHA1Reset();
+    /*if(err){//stampa problemi consistenza dei dati
+    }*/
+    //err=SHA1Input(ciph,getSize()*sizeof(QChar));
+    SHA1Input(ciph);//ciph is a QVector
+    uint8_t Message_Digest[20];
+    SHA1Result(Message_Digest);
+    for(int i=0;i<20;i++)
+        printf ("%x",Message_Digest[i]);
+        // qDebug()<<Message_Digest[i];
+
+    //prova con QVector che non andava
+    //vado a modificare l' oggetto puntato? uso cit or it?
+    //keyword auto non funziona
+    /*unsigned int sizeVector=(sizeof(QChar)*ciph.size());
+    QVector<uint8_t> arrayCompleto(sizeVector,0);
+    QString::iterator it=ciph.begin();
+    QVector<uint8_t>::iterator uit;
+    for(it=ciph.begin(),uit=arrayCompleto.begin();
+        it!=ciph.end();
+        it++,uit=uit+2){
+        //splitta il QChar convertito in short, in due uint8_t
+        short* temp=reinterpret_cast<short*>(it);//type_of(it)=QChar*
+        const uint8_t primo=(*temp) & 0xFF;
+        const uint8_t secondo=(*temp) >> 8;
+        *uit=primo;
+        *(uit+1)=secondo;
+        qDebug()<<*it;
+    }*/
+}
+void sha1::decrypt(){}
+
+void sha1::converti(){
+    encrypt();//rivedii
+}
+
+void sha1::reset(){
+    testo::reset();
+    ciph.clear();
+}
+
+//___SETTER___
+void sha1::setText(QString s){ testo::setText(s);}
+void sha1::setCiph(QString s){
+    ciph.clear();
+    QByteArray ar=s.toLatin1();
+    for(int i=0;i<ar.size();i++)
+        ciph.append(ar[i]);
+}
+
+//___GETTER___
+QString sha1::getCiph()const{
+    QByteArray ar;
+
+    //QByteArray::iterator it=ar.begin();
+    for(int i=0;i<ar.size();i++)
+        ar.append(ciph[i]);
+    return ar;
+}
+QString sha1::getText()const{return testo::getText();}
+
+
+
+
+//_______________________________NON TOCCARE_________________________________________//
+void sha1::SHA1Reset(){
+    if(!this)
+        return; //shaNull;
+    Length_Low=0;
+    Length_High = 0;
+    Message_Block_Index = 0;
+    Intermediate_Hash[0] = 0x67452301;
+    Intermediate_Hash[1] = 0xEFCDAB89;
+    Intermediate_Hash[2] = 0x98BADCFE;
+    Intermediate_Hash[3] = 0x10325476;
+    Intermediate_Hash[4] = 0xC3D2E1F0;
+    Computed = 0;
+    Corrupted = 0;
+    return;
+}
 
 void sha1::SHA1Result(uint8_t Message_Digest[SHA1HashSize]){
     int i;
@@ -134,6 +194,40 @@ void sha1::SHA1Result(uint8_t Message_Digest[SHA1HashSize]){
         Message_Digest[i] = Intermediate_Hash[i>>2]>> 8 * ( 3 - ( i & 0x03 ) );
     }
     return;
+}
+
+void sha1::SHA1PadMessage(){
+    /*
+    * Check to see if the current message block is too small to hold
+    * the initial padding bits and length. If so, we will pad the
+    * block, process it, and then continue padding into a second
+    * block.
+    */
+    if (Message_Block_Index > 55){
+        Message_Block[Message_Block_Index++] = 0x80;
+        while(Message_Block_Index < 64)
+            Message_Block[Message_Block_Index++] = 0;
+        SHA1ProcessMessageBlock();
+        while(Message_Block_Index < 56)
+            Message_Block[Message_Block_Index++] = 0;
+    }
+    else{
+        Message_Block[Message_Block_Index++] = 0x80;
+        while(Message_Block_Index < 56)
+            Message_Block[Message_Block_Index++] = 0;
+    }
+    /*
+    * Store the message length as the last 8 octets
+    */
+    Message_Block[56] = Length_High >> 24;
+    Message_Block[57] = Length_High >> 16;
+    Message_Block[58] = Length_High >> 8;
+    Message_Block[59] = Length_High;
+    Message_Block[60] = Length_Low >> 24;
+    Message_Block[61] = Length_Low >> 16;
+    Message_Block[62] = Length_Low >> 8;
+    Message_Block[63] = Length_Low;
+    SHA1ProcessMessageBlock();
 }
 
 void sha1::SHA1ProcessMessageBlock(){
@@ -206,94 +300,3 @@ void sha1::SHA1ProcessMessageBlock(){
     Intermediate_Hash[4] += E;
     Message_Block_Index = 0;
 }
-
-void sha1::SHA1PadMessage(){
-    /*
-    * Check to see if the current message block is too small to hold
-    * the initial padding bits and length. If so, we will pad the
-    * block, process it, and then continue padding into a second
-    * block.
-    */
-    if (Message_Block_Index > 55){
-        Message_Block[Message_Block_Index++] = 0x80;
-        while(Message_Block_Index < 64)
-            Message_Block[Message_Block_Index++] = 0;
-        SHA1ProcessMessageBlock();
-        while(Message_Block_Index < 56)
-            Message_Block[Message_Block_Index++] = 0;
-    }
-    else{
-        Message_Block[Message_Block_Index++] = 0x80;
-        while(Message_Block_Index < 56)
-            Message_Block[Message_Block_Index++] = 0;
-    }
-    /*
-    * Store the message length as the last 8 octets
-    */
-    Message_Block[56] = Length_High >> 24;
-    Message_Block[57] = Length_High >> 16;
-    Message_Block[58] = Length_High >> 8;
-    Message_Block[59] = Length_High;
-    Message_Block[60] = Length_Low >> 24;
-    Message_Block[61] = Length_Low >> 16;
-    Message_Block[62] = Length_Low >> 8;
-    Message_Block[63] = Length_Low;
-    SHA1ProcessMessageBlock();
-}
-
-void sha1::encrypt(){
-    //devo fare lo sha1 reset?
-    SHA1Reset();
-    /*if(err){//stampa problemi consistenza dei dati
-    }*/
-    //err=SHA1Input(ciph,getSize()*sizeof(QChar));
-    SHA1Input(ciph);//ciph is a QVector
-    uint8_t Message_Digest[20];
-    SHA1Result(Message_Digest);
-    for(int i=0;i<20;i++)
-        printf ("%x",Message_Digest[i]);
-        // qDebug()<<Message_Digest[i];
-
-    //prova con QVector che non andava
-    //vado a modificare l' oggetto puntato? uso cit or it?
-    //keyword auto non funziona
-    /*unsigned int sizeVector=(sizeof(QChar)*ciph.size());
-    QVector<uint8_t> arrayCompleto(sizeVector,0);
-    QString::iterator it=ciph.begin();
-    QVector<uint8_t>::iterator uit;
-    for(it=ciph.begin(),uit=arrayCompleto.begin();
-        it!=ciph.end();
-        it++,uit=uit+2){
-        //splitta il QChar convertito in short, in due uint8_t
-        short* temp=reinterpret_cast<short*>(it);//type_of(it)=QChar*
-        const uint8_t primo=(*temp) & 0xFF;
-        const uint8_t secondo=(*temp) >> 8;
-        *uit=primo;
-        *(uit+1)=secondo;
-        qDebug()<<*it;
-    }*/
-}
-void sha1::decrypt(){}
-
-void sha1::converti(){
-    encrypt();//rivedii
-}
-
-void sha1::reset(){
-    testo::reset();
-    ciph.clear();
-}
-
-//___SETTER___
-void sha1::setCiph(QString s){testo::setText(s);}
-void sha1::setText(QString s){ciph.clear(); testo::setText(s);}
-//___GETTER___
-QString sha1::getCiph()const{
-    QByteArray ar;
-
-    //QByteArray::iterator it=ar.begin();
-    for(int i=0;i<ar.size();i++)
-        ar.append(ciph[i]);
-    return ar;
-}
-QString sha1::getText()const{return testo::getText();}

@@ -36,6 +36,7 @@ private:
     QPushButton* copyButton;
     QPushButton* resetButton;
 
+    QWidget* contenitore;
 
 public:
     explicit cesareView(QWidget *parent = 0);

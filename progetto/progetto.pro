@@ -67,7 +67,8 @@ DISTFILES += \
     img/font/Titillium-Bold.otf \
     img/font/Titillium-Light.otf \
     img/font/Titillium-Regular.otf \
-    img/font/Titillium-Thin.otf
+    img/font/Titillium-Thin.otf \
+    img/font/Aaargh.ttf
 
 RESOURCES += \
     stylesheet.qrc

@@ -5,6 +5,7 @@
 #include <cesareView.h>
 #include <vigenereView.h>
 #include <sha1View.h>
+#include <QFileSystemModel>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent):QWidget(parent)
@@ -22,7 +23,13 @@ MainWindow::MainWindow(QWidget *parent):QWidget(parent)
     mainLayout->addWidget(menuTabs);
 
 //Label->setText("<font color='red'>Some text</font>");
-
+    QFile res(":/img/font/Aaargh.ttf");
+    QFileSystemModel model;
+    //set model
+    QFont f;
+    f.setFamily("ARG");
+    f.setPointSize(15);
+    setFont(f);
     setLayout(mainLayout);
 
 

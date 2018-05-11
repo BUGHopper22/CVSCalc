@@ -61,7 +61,7 @@ void controller::convertS(QString s){
     sha.setText(s);
     sha.setCiph(s);
     sha.converti();
-    emit vigenereOutputV(vigenere.getCiph());
+    emit sha1OutputS(sha.getCiph());
 
 }
 

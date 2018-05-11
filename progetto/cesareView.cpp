@@ -1,13 +1,15 @@
-#include "vigenereView.h"
+#include "cesareView.h".h"
 
-vigenereView::vigenereView(QWidget *parent):QWidget(parent){
+
+
+cesareView::cesareView(QWidget *parent):QWidget(parent){
 
     inputTitle=new QLabel("input");
     outputTitle= new QLabel("output");
     keyTitle=new QLabel("key");
     inputText=new QTextEdit;
     outputText=new QTextEdit;
-    keyText=new QLineEdit;
+    keyText=new QSpinBox;
     encRadButton=new QRadioButton("encrypt");
     decRadButton= new QRadioButton("decrypt");
     convertButton=new QPushButton("converti");
@@ -21,7 +23,9 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox3=new QVBoxLayout;
 
     content->setAlignment(Qt::AlignCenter);
+    vBox3->setAlignment(Qt::AlignCenter);
     vBox2->setAlignment(Qt::AlignCenter);
+    vBox1->setAlignment(Qt::AlignCenter);
     encDecBox->setAlignment(Qt::AlignTop);
     inputTitle->setAlignment(Qt::AlignTop);
     outputTitle->setAlignment(Qt::AlignTop);
@@ -32,16 +36,15 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     content->addLayout(vBox2);
     content->addLayout(vBox3);
 
+
     vBox1->addWidget(inputTitle);
     vBox1->addWidget(inputText);
 
     vBox3->addWidget(outputTitle);
     vBox3->addWidget(outputText);
 
-    //vBox2
     vBox2->addWidget(keyTitle);
     vBox2->addWidget(keyText);
-
 
     vBox2->addWidget(convertButton);
     vBox2->addLayout(encDecBox);
@@ -51,30 +54,31 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(resetButton);
     outputText->setReadOnly(true);
 
+
+
     setLayout(content);
 
     //CONVERT BUTTON
-    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convertV()));
+    connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convert()));
     //COPY BUTTON
-    connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutputV()));
+    connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutput()));
     //CONVERT BUTTON
-    connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(resetV()));
+    connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(reset()));
 }
 
 //CONVERT BUTTON
-void vigenereView::convertV(){
+void cesareView::convert(){
     if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
-        emit convertMethodV(inputText->toPlainText(),keyText->text(),encRadButton->isChecked());
-    else{//errore input
- }
+        emit convertMethod(inputText->toPlainText(),keyText->value(),encRadButton->isChecked());
+    else{/*errore input*/ }
 }
-void vigenereView::vigenereOutputV(QString s){
+void cesareView::cesareOutput(QString s){
     outputText->clear();
     outputText->insertPlainText(s);
 }
 
 //COPY BUTTON
-void vigenereView::copyOutputV(){
+void cesareView::copyOutput(){
     if(outputText->toPlainText()!="")
         outputText->selectAll();
     outputText->copy();
@@ -82,12 +86,11 @@ void vigenereView::copyOutputV(){
         //emit outputText->copyAvailable(true);
 }
 //RESET BUTTON
-void vigenereView::resetV(){
-    emit resetMethodV();
+void cesareView::reset(){
+    emit resetMethod();
 }
-void vigenereView::resetOutputV(){
+void cesareView::resetOutput(){
     inputText->clear();
     outputText->clear();
     keyText->clear();
 }
-

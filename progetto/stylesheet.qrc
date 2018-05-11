@@ -19,5 +19,6 @@
         <file>img/font/Titillium-Light.otf</file>
         <file>img/font/Titillium-Regular.otf</file>
         <file>img/font/Titillium-Thin.otf</file>
+        <file>img/font/Aaargh.ttf</file>
     </qresource>
 </RCC>
