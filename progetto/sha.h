@@ -13,12 +13,13 @@ private:
     //ricorda di fare la delete su questo array dinamico
     unsigned char* messageDigest;
 public:
-    sha(QString,ushort,int);
+    sha(QString="",ushort=0,int=0);
 
     //___SETTER___
     void setText(QString);
     void setCiph(QString);
     void setType(ushort);
+    void setDim(int);
 
     //___GETTER___
     QString getText()const;
@@ -29,12 +30,13 @@ public:
     //___METODI
     virtual void converti();
     virtual void reset();
-    void copy()const;
-    void sha1();
-    void sha224();
-    void sha256();
-    void sha384();
-    void sha512();
+    virtual void encrypt();
+    virtual void decrypt();
+    //void sha1();
+    //void sha224();
+    //void sha256();
+    //void sha384();
+    //void sha512();
 };
 
 #endif // SHA_H

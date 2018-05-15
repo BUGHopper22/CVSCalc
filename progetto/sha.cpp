@@ -8,6 +8,7 @@ sha::sha(QString s,ushort t,int d):ciph(s),type(t),dim(d){
 void sha::setText(QString s){testo::setText(s);}
 void sha::setCiph(QString s){ciph.clear();ciph.append(s);}
 void sha::setType(ushort t){type=t;}
+void sha::setDim(int d){dim=d;messageDigest=new unsigned char[dim];}
 
 //___GETTER
 QString sha::getText()const{return testo::getText();}
@@ -46,3 +47,6 @@ void sha::reset(){
     type=0;
     messageDigest=new unsigned char[0];
 }
+
+void sha::encrypt(){}
+void sha::decrypt(){}

@@ -4,7 +4,9 @@
 #include <QApplication>
 #include <cifrarioCesare.h>
 #include <cifrarioVigenere.h>
-#include <sha1.h>
+#include <sha.h>
+#include "cifrarioCesare.h"
+#include "QDebug"
 
 
 class controller:public QObject{
@@ -13,7 +15,7 @@ private:
     MainWindow* w;
     cifrarioCesare cesare;
     cifrarioVigenere vigenere;
-    sha1 sha;
+    sha shaOb;
 public:
     controller();
     ~controller();
@@ -26,7 +28,7 @@ public slots:
     void convertV(QString,QString,bool);//convert button
     void resetV();//reset button
     //SHA1
-    void convertS(QString);//convert button
+    void convertS(QString, ushort t, int d);//convert button
 
 signals:
     //CESARE

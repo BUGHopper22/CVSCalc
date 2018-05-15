@@ -23,7 +23,7 @@ class sha1View:public QWidget{
 private:
     //__box
     QHBoxLayout* content;
-    QHBoxLayout* encdecBox;
+    QVBoxLayout* shaBox;
     QVBoxLayout* vBox1;
     QVBoxLayout* vBox2;
     QVBoxLayout* vBox3;
@@ -34,8 +34,11 @@ private:
     QLabel* inputTitle;
     QLabel* outputTitle;
     QSpinBox* keyText;
-    QRadioButton* encryptButton;
-    QRadioButton* decryptButton;
+    QRadioButton* sha1Button;
+    QRadioButton* sha224Button;
+    QRadioButton* sha256Button;
+    QRadioButton* sha384Button;
+    QRadioButton* sha512Button;
     QPushButton* convertButton;
     QPushButton* copyButton;
     QPushButton* resetButton;
@@ -43,7 +46,7 @@ public:
     explicit sha1View(QWidget*parent = 0);
 signals:
     //convert button
-    void convertMethodS(QString);
+    void convertMethodS(QString,ushort,int);
 public slots:
     //convert button
     void convertS();
