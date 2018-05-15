@@ -1,4 +1,4 @@
-#include "cesareView.h".h"
+#include "cesareView.h"
 
 
 
@@ -66,7 +66,7 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(reset()));
 }
 
-//CONVERT BUTTON
+//____CONVERT BUTTON
 void cesareView::convert(){
     if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
         emit convertMethod(inputText->toPlainText(),keyText->value(),encRadButton->isChecked());
@@ -82,8 +82,6 @@ void cesareView::copyOutput(){
     if(outputText->toPlainText()!="")
         outputText->selectAll();
     outputText->copy();
-
-        //emit outputText->copyAvailable(true);
 }
 //RESET BUTTON
 void cesareView::reset(){

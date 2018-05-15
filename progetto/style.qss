@@ -1,13 +1,24 @@
+/*
+grigio chiaro   -> #e9f0f4
+blu scuro       -> #2e3641
+grigio scuro    -> #9eb2c0
+verde chiaro    -> #1abc9c
+verde scuro     -> #16a085
+*/
+
+
 MainWindow{
 border: 5px red;
 background-color:#2e3641;
 }
 
-QLabel,QTabWidget,QTabBar,QRadioButton {
+QLabel,QTabWidget,QTabBar{
 color: #9eb2c0;
-/*font-family:dense;*/
-font-size:30px;
+font-family:dense;
+font-size:50px;
 }
+
+
 QSpinBox,QLineEdit{
     width:250px;
     border:1px solid ;
@@ -18,20 +29,21 @@ QSpinBox,QLineEdit{
 
 QTextEdit{
     height:300px;
-    width:250px,
+    width:250px;
+
 }
 
-QTextEdit{
+QTextEdit,QLineEdit{
 color:#2e3641;
 font-family:dense;
 font-size:30px;
 }
 
 
-QPushButton,QSpinBox{
+QPushButton,QSpinBox,QLabel,QRadioButton{
 color: #e9f0f4;
 font-family:dense;
-font-size:20px;
+font-size:40px;
 }
 
 /*finestra principale tab*/
@@ -42,7 +54,7 @@ QTabWidget::pane { /* The tab widget frame */
 
 }
 QTextEdit,QLineEdit,QSpinBox{
-background-color:/*#e9f0f4*/#e9f0f4;
+background-color:#e9f0f4/*#e9f0f4*/;
 }
 QLineEdit{height:40px;}
 
@@ -59,7 +71,8 @@ QTabWidget::tab-bar {
     it reads QTabBar _not_ QTabWidget */
     /*___singole tab___*/
 QTabBar::tab {
-    width:200px;
+    width:250px;
+    margin-left:10px;
     background-color:	#2e3641;
 
     /*border-right: 2px solid #1abc9c;*/
@@ -83,7 +96,7 @@ QTabBar::tab:!selected {
 }
 
 
-/*__________________________________________________*/
+/*____________________-___QPUSHBUTTON_______________________________*/
 
 QPushButton{
 
@@ -101,7 +114,14 @@ border-image: url(:/img/buttonActivate.png);
 }
 
 
-/*_________________________________________________________________*/
+/*_______________________QRADIOBUTTON__________________________________________*/
+QRadioButton{
+color: #9eb2c0;
+/*font-family:dense;*/
+font-size:30px;
+height:40px;
+}
+
 QRadioButton::indicator{
 
 height: 25px;
@@ -119,7 +139,7 @@ QRadioButton::indicator::checked {
 image: url(:/img/checkChecked.png);
 }
 
-/*_________________________________________________________________*/
+/*_________________________QSPINBOX________________________________________*/
 
 
 QSpinBox {

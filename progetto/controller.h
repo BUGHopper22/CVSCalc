@@ -29,6 +29,7 @@ public slots:
     void resetV();//reset button
     //SHA1
     void convertS(QString, ushort t, int d);//convert button
+    void resetS();//reset button
 
 signals:
     //CESARE
@@ -39,6 +40,7 @@ signals:
     void resetOutputV();//reset button
     //SHA1
     void sha1OutputS(QString);
+    void resetOutputS();//reset button
 };
 
 #endif // CONTROLLER_H

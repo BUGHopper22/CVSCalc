@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 
 
     //otf
-    /*QFontDatabase::addApplicationFont(":/img/font/Dense-Regular.otf");
-    QFont font = QFont("dense", 10, 1);*/
+    QFontDatabase::addApplicationFont(":/img/font/Dense-Regular.otf");
+    QFont font = QFont("dense", 10, 1);
     //___STYLESHEET___
     QFile File(":/style.qss");
     File.open(QFile::ReadOnly);

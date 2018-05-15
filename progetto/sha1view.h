@@ -47,10 +47,19 @@ public:
 signals:
     //convert button
     void convertMethodS(QString,ushort,int);
+    //copy button
+    void copyMethodS(QString);
+    //reset button
+    void resetMethodS();
 public slots:
     //convert button
     void convertS();
     void sha1OutputS(QString);
+    //copy button
+    void copyOutputS();
+    //reset button
+    void resetS();
+    void resetOutputS();
 };
 
 #endif // SHA1VIEW_H

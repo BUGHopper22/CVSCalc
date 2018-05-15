@@ -10,7 +10,7 @@ private:
     bool check;
 public:
     cifrarioCesare(QString c="", ushort s=3);//controllo di integrita su 0<=shift<=26
-
+    //~cifrarioCesare();
     //___SETTER___
     void setText(QString s);
     void setCiph(QString s);

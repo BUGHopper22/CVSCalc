@@ -58,8 +58,13 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
 
     //CONVERT BUTTON
     connect(convertButton,SIGNAL(clicked()),this,SLOT(convertS()));
+    //COPY BUTTON
+    connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutputS()));
+    //CONVERT BUTTON
+    connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(resetS()));
 }
 
+//____CONVERT BUTTON
 void sha1View::convertS(){
     int type=-1;
     int dim=-1;
@@ -89,4 +94,20 @@ void sha1View::convertS(){
 void sha1View::sha1OutputS(QString s){
     outputText->clear();
     outputText->insertPlainText(s);
+}
+
+//COPY BUTTON
+void sha1View::copyOutputS(){
+    if(outputText->toPlainText()!="")
+        outputText->selectAll();
+    outputText->copy();
+}
+//RESET BUTTON
+void sha1View::resetS(){
+    emit resetMethodS();
+}
+void sha1View::resetOutputS(){
+    inputText->clear();
+    outputText->clear();
+    keyText->clear();
 }

@@ -17,8 +17,12 @@ controller::controller():w(new MainWindow()),cesare(),vigenere(),shaOb(){
     connect(w->getTabWidget()->widget(1),SIGNAL(resetMethodV()),this,SLOT(resetV()));
     connect(this,SIGNAL(resetOutputV()),w->getTabWidget()->widget(1),SLOT(resetOutputV()));
 //_____SHA_____//
+    //CONVERT BUTTON
     connect(w->getTabWidget()->widget(2),SIGNAL(convertMethodS(QString,ushort,int)),this,SLOT(convertS(QString,ushort,int)));
     connect(this,SIGNAL(sha1OutputS(QString)),w->getTabWidget()->widget(2),SLOT(sha1OutputS(QString)));
+    //RESET BUTTON
+    connect(w->getTabWidget()->widget(2),SIGNAL(resetMethodS()),this,SLOT(resetS()));
+    connect(this,SIGNAL(resetOutputS()),w->getTabWidget()->widget(2),SLOT(resetOutputS()));
 }
 
 void controller::showC(){w->show();}
@@ -68,6 +72,10 @@ void controller::convertS(QString s,ushort t,int d){
 
 }
 
+void controller::resetS(){//occhio alla seconda connect probabilmente inutile
+    shaOb.reset();
+    emit resetOutputS();
+}
 
 
 controller::~controller(){}
