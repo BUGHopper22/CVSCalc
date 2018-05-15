@@ -9,6 +9,7 @@
 #include "../sha1view.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'sha1view.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -19,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_sha1View_t {
-    QByteArrayData data[5];
-    char stringdata0[46];
+    QByteArrayData data[6];
+    char stringdata0[63];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +34,12 @@ QT_MOC_LITERAL(0, 0, 8), // "sha1View"
 QT_MOC_LITERAL(1, 9, 14), // "convertMethodS"
 QT_MOC_LITERAL(2, 24, 0), // ""
 QT_MOC_LITERAL(3, 25, 8), // "convertS"
-QT_MOC_LITERAL(4, 34, 11) // "sha1OutputS"
+QT_MOC_LITERAL(4, 34, 11), // "sha1OutputS"
+QT_MOC_LITERAL(5, 46, 16) // "QVector<uint8_t>"
 
     },
     "sha1View\0convertMethodS\0\0convertS\0"
-    "sha1OutputS"
+    "sha1OutputS\0QVector<uint8_t>"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +68,7 @@ static const uint qt_meta_data_sha1View[] = {
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, 0x80000000 | 5,    2,
 
        0        // eod
 };
@@ -79,7 +81,7 @@ void sha1View::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         switch (_id) {
         case 0: _t->convertMethodS((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->convertS(); break;
-        case 2: _t->sha1OutputS((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 2: _t->sha1OutputS((*reinterpret_cast< QVector<uint8_t>(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

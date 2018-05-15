@@ -13,13 +13,17 @@
 #include <QHBoxLayout>
 #include <QString>
 #include <QLineEdit>
+#include <bitset>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
 
 class sha1View:public QWidget{
     Q_OBJECT
 private:
     //__box
     QHBoxLayout* content;
-    QHBoxLayout* utfBox;
+    QHBoxLayout* encdecBox;
     QVBoxLayout* vBox1;
     QVBoxLayout* vBox2;
     QVBoxLayout* vBox3;
@@ -30,8 +34,8 @@ private:
     QLabel* inputTitle;
     QLabel* outputTitle;
     QSpinBox* keyText;
-    QRadioButton* utf8Button;
-    QRadioButton* utf16Button;
+    QRadioButton* encryptButton;
+    QRadioButton* decryptButton;
     QPushButton* convertButton;
     QPushButton* copyButton;
     QPushButton* resetButton;

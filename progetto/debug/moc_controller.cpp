@@ -9,6 +9,7 @@
 #include "../controller.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'controller.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -19,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_controller_t {
-    QByteArrayData data[12];
-    char stringdata0[117];
+    QByteArrayData data[13];
+    char stringdata0[134];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,16 +37,18 @@ QT_MOC_LITERAL(3, 25, 11), // "resetOutput"
 QT_MOC_LITERAL(4, 37, 15), // "vigenereOutputV"
 QT_MOC_LITERAL(5, 53, 12), // "resetOutputV"
 QT_MOC_LITERAL(6, 66, 11), // "sha1OutputS"
-QT_MOC_LITERAL(7, 78, 7), // "convert"
-QT_MOC_LITERAL(8, 86, 5), // "reset"
-QT_MOC_LITERAL(9, 92, 8), // "convertV"
-QT_MOC_LITERAL(10, 101, 6), // "resetV"
-QT_MOC_LITERAL(11, 108, 8) // "convertS"
+QT_MOC_LITERAL(7, 78, 16), // "QVector<uint8_t>"
+QT_MOC_LITERAL(8, 95, 7), // "convert"
+QT_MOC_LITERAL(9, 103, 5), // "reset"
+QT_MOC_LITERAL(10, 109, 8), // "convertV"
+QT_MOC_LITERAL(11, 118, 6), // "resetV"
+QT_MOC_LITERAL(12, 125, 8) // "convertS"
 
     },
     "controller\0cesareOutput\0\0resetOutput\0"
     "vigenereOutputV\0resetOutputV\0sha1OutputS\0"
-    "convert\0reset\0convertV\0resetV\0convertS"
+    "QVector<uint8_t>\0convert\0reset\0convertV\0"
+    "resetV\0convertS"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,18 +73,18 @@ static const uint qt_meta_data_controller[] = {
        6,    1,   72,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    3,   75,    2, 0x0a /* Public */,
-       8,    0,   82,    2, 0x0a /* Public */,
-       9,    3,   83,    2, 0x0a /* Public */,
-      10,    0,   90,    2, 0x0a /* Public */,
-      11,    1,   91,    2, 0x0a /* Public */,
+       8,    3,   75,    2, 0x0a /* Public */,
+       9,    0,   82,    2, 0x0a /* Public */,
+      10,    3,   83,    2, 0x0a /* Public */,
+      11,    0,   90,    2, 0x0a /* Public */,
+      12,    1,   91,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, 0x80000000 | 7,    2,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString, QMetaType::Int, QMetaType::Bool,    2,    2,    2,
@@ -103,7 +106,7 @@ void controller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->resetOutput(); break;
         case 2: _t->vigenereOutputV((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 3: _t->resetOutputV(); break;
-        case 4: _t->sha1OutputS((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 4: _t->sha1OutputS((*reinterpret_cast< QVector<uint8_t>(*)>(_a[1]))); break;
         case 5: _t->convert((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
         case 6: _t->reset(); break;
         case 7: _t->convertV((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
@@ -139,7 +142,7 @@ void controller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             }
         }
         {
-            typedef void (controller::*_t)(QString );
+            typedef void (controller::*_t)(QVector<uint8_t> );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&controller::sha1OutputS)) {
                 *result = 4;
             }
@@ -210,7 +213,7 @@ void controller::resetOutputV()
 }
 
 // SIGNAL 4
-void controller::sha1OutputS(QString _t1)
+void controller::sha1OutputS(QVector<uint8_t> _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);

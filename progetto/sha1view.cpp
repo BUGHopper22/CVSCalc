@@ -1,4 +1,5 @@
 #include "sha1View.h"
+#include<QDebug>
 
 sha1View::sha1View(QWidget*parent):QWidget(parent){
     inputTitle=new QLabel("input");
@@ -7,21 +8,21 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     inputText=new QTextEdit;
     outputText=new QTextEdit;
     keyText=new QSpinBox;
-    utf8Button=new QRadioButton("utf-8");
-    utf16Button= new QRadioButton("utf-16");
+    encryptButton=new QRadioButton("encrypt");
+    decryptButton= new QRadioButton("decrypt");
     convertButton=new QPushButton("converti");
     copyButton=new QPushButton("output copy");
     resetButton=new QPushButton("reset");
     //__box
     content=new QHBoxLayout;
-    utfBox=new QHBoxLayout;
+    encdecBox=new QHBoxLayout;
     vBox1=new QVBoxLayout;
     vBox2=new QVBoxLayout;
 
     content->setAlignment(Qt::AlignCenter);
 
     vBox2->setAlignment(Qt::AlignCenter);
-    utfBox->setAlignment(Qt::AlignTop);
+    encdecBox->setAlignment(Qt::AlignTop);
     inputTitle->setAlignment(Qt::AlignTop);
     outputTitle->setAlignment(Qt::AlignTop);
     inputTitle->setAlignment(Qt::AlignBottom);
@@ -36,9 +37,9 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     vBox1->addWidget(outputText);
 
 
-    vBox2->addLayout(utfBox);
-    utfBox->addWidget(utf8Button);
-    utfBox->addWidget(utf16Button);
+    vBox2->addLayout(encdecBox);
+    encdecBox->addWidget(encryptButton);
+    encdecBox->addWidget(decryptButton);
     vBox2->addWidget(convertButton);
     vBox2->addWidget(copyButton);
     vBox2->addWidget(resetButton);
@@ -53,11 +54,14 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
 }
 
 void sha1View::convertS(){
-    if(inputText->toPlainText()!="" && (utf8Button->isChecked()||utf16Button->isChecked()))
-        emit convertMethodS(inputText->toPlainText());
+    if(inputText->toPlainText()!="" && (encryptButton->isChecked()||decryptButton->isChecked()))
+    {qDebug()<< inputText->toPlainText();
+        emit convertMethodS(inputText->toPlainText());}
     else{/*errore input*/ }
 }
 void sha1View::sha1OutputS(QString s){
-    outputText->clear();
+    qDebug() << "sei su sha1OutputS";
+    //s è lungo 160bit
+
     outputText->insertPlainText(s);
 }

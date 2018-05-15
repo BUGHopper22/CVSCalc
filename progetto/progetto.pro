@@ -32,6 +32,7 @@ SOURCES += \
     sha1view.cpp \
     testo.cpp \
     vigenereview.cpp\
+    sha.cpp
 
 HEADERS += \
     cesareView.h \
@@ -43,7 +44,8 @@ HEADERS += \
     sha1view.h \
     testo.h \
     ui_mainwindow.h \
-    vigenereView.h
+    vigenereView.h \
+    sha.h
 
 FORMS += \
         mainwindow.ui

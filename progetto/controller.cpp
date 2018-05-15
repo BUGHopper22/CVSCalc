@@ -2,6 +2,7 @@
 #include "cifrarioCesare.h"
 #include "cesareView.h"
 #include "sha1.h"
+#include "QDebug"
 
 controller::controller():w(new MainWindow()),cesare(),vigenere(),sha(){
 //_____CESARE_____//
@@ -27,6 +28,7 @@ void controller::showC(){w->show();}
 
 //_____CESARE_____
 void controller::convert(QString s,int u,bool b){
+    //ma chiamare direttamente il costruttore parfeva brutto?
     cesare.reset();
     cesare.setText(s);
     cesare.setCiph(s);
@@ -59,9 +61,14 @@ void controller::resetV(){
 void controller::convertS(QString s){
     sha.reset();
     sha.setText(s);
+    qDebug()<<s;
+    qDebug()<<"convertS"<<sha.getText();
+
     sha.setCiph(s);
+    qDebug()<<"convertS2"<<sha.getCiph();
     sha.converti();
-    emit sha1OutputS(sha.getCiph());
+    qDebug()<<"convertS2 dopo sha1.converti()"<<sha.getCiph();
+    emit sha1OutputS(sha.getMessageDigest());
 
 }
 

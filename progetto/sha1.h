@@ -7,7 +7,8 @@
 #include <QByteArray>
 #include <string.h>
 #include <bitset>
-#define SHA1HashSize 20
+#include <QBitArray>
+    #define SHA1HashSize 20
 
 #ifndef _SHA_enum_
 #define _SHA_enum_
@@ -22,7 +23,7 @@
 class sha1:public testo{
 private:
     //_____campi dati dell RFC-3174_____//
-    uint32_t Intermediate_Hash[SHA1HashSize/4]; /* Message Digest (32*5=160->corretto)*/
+    uint32_t Intermediate_Hash[SHA1HashSize/4]; /* Message Digest (32*5=160->corretto, 4bit ogni hex)*/
     uint32_t Length_Low; /* Message length in bits */
     uint32_t Length_High; /* Message length in bits */
     int_least16_t Message_Block_Index;/* Index into message block array */
@@ -35,13 +36,13 @@ private:
     void SHA1PadMessage();
     void SHA1ProcessMessageBlock();
     void SHA1Input(const uint8_t *,unsigned int);
-    void SHA1Input(const QVector<uint8_t> );
+    void SHA1Input(const QVector<unsigned char> );
     void SHA1Result(uint8_t Message_Digest[SHA1HashSize]);
 
     //QString usa QChar in codifica: UTF-16. Quindi quando uso encrypt sulla QString sto andando a fare l' hash su quella codifica
     //campi dati aggiunti
-    QVector<uint8_t> ciph;
-
+    QVector<unsigned char> ciph;
+    uint8_t Message_Digest[20];
 public:
 
     //___SETTER___
@@ -50,8 +51,10 @@ public:
     //void setCheck(bool b);
 
     //___GETTER___
-    QString getCiph()const;
+    QVector<unsigned char> getCiph()const;
     QString getText()const;
+    QString getMessageDigest()const;
+
     //bool getCheck()const;
 
     sha1(QString="");

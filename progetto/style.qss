@@ -10,9 +10,10 @@ font-size:30px;
 }
 QSpinBox,QLineEdit{
     width:250px;
-    border:0;
+    border:1px solid ;
     margin:0;
     padding:0;
+
 }
 
 QTextEdit{
@@ -41,7 +42,7 @@ QTabWidget::pane { /* The tab widget frame */
 
 }
 QTextEdit,QLineEdit,QSpinBox{
-background-color:#e9f0f4;
+background-color:/*#e9f0f4*/#e9f0f4;
 }
 QLineEdit{height:40px;}
 
@@ -89,6 +90,7 @@ QPushButton{
     width:180px;
     height:55px;
     border-image: url(:/img/buttonNormal.png);
+
 }
 QPushButton:hover{
 border-image: url(:/img/buttonHover.png);
@@ -132,6 +134,7 @@ QSpinBox::up-button {
 height:20px;
 width:46px;
     border-image: url(:/img/spinBoxUpButtonNormal.png);
+
 }
 
 
