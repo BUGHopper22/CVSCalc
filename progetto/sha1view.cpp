@@ -52,6 +52,7 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     vBox2->addWidget(resetButton);
     outputText->setReadOnly(true);
 
+    outputText->setObjectName("shaOutput");
 
 
     setLayout(content);

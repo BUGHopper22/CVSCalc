@@ -1,4 +1,5 @@
 /*
+COLORI UTILIZZATI:
 grigio chiaro   -> #e9f0f4
 blu scuro       -> #2e3641
 grigio scuro    -> #9eb2c0
@@ -10,6 +11,14 @@ verde scuro     -> #16a085
 MainWindow{
 border: 5px red;
 background-color:#2e3641;
+}
+
+/*finestra principale tab*/
+QTabWidget::pane { /* The tab widget frame */
+    padding-top:30px;
+    background-color:/*#394264*/#2e3641;
+    border-radius:0px;
+
 }
 
 QLabel,QTabWidget,QTabBar{
@@ -46,19 +55,23 @@ font-family:dense;
 font-size:40px;
 }
 
-/*finestra principale tab*/
-QTabWidget::pane { /* The tab widget frame */
-    padding-top:30px;
-    background-color:/*#394264*/#2e3641;
-    border-radius:0px;
-
-}
 QTextEdit,QLineEdit,QSpinBox{
 background-color:#e9f0f4/*#e9f0f4*/;
 }
+
 QLineEdit{height:40px;}
 
 
+
+QTextEdit#shaOutput{
+    height:10px;
+    width:40px;
+    background-color:red;
+}
+
+
+
+/*____________________-___QTABBAR_______________________________*/
 QTabWidget::tab-bar {
 
     border-color:red;
@@ -67,9 +80,6 @@ QTabWidget::tab-bar {
      width:900px;
 }
 
-/* Style the tab using the tab sub-control. Note that
-    it reads QTabBar _not_ QTabWidget */
-    /*___singole tab___*/
 QTabBar::tab {
     width:250px;
     margin-left:10px;
@@ -94,7 +104,6 @@ QTabBar::tab:selected {
 QTabBar::tab:!selected {
     margin-top: 2px; /* make non-selected tabs look smaller */
 }
-
 
 /*____________________-___QPUSHBUTTON_______________________________*/
 
