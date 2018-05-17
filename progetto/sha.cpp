@@ -1,5 +1,5 @@
 #include "sha.h"
-#include "QDebug"
+
 
 sha::sha(QString s,ushort t,int d):ciph(s),type(t),dim(d){
     messageDigest=new unsigned char[dim];
@@ -49,5 +49,3 @@ void sha::reset(){
     messageDigest=new unsigned char[0];
 }
 
-void sha::encrypt(){}
-void sha::decrypt(){}

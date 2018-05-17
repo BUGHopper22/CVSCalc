@@ -1,5 +1,5 @@
 #include "cifrariovigenere.h"
-#include <QDebug>
+
 
 //____RIDEF. OPERATOR+- TRA QCHAR___
 ushort operator+(QChar a,QChar const & b){

@@ -6,6 +6,7 @@
 #include <vigenereView.h>
 #include <sha1View.h>
 #include <QFileSystemModel>
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent):QWidget(parent)
@@ -17,14 +18,14 @@ MainWindow::MainWindow(QWidget *parent):QWidget(parent)
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
     menuTabs=new QTabWidget;
-    menuTabs->addTab(new cesareView(),"cifrario Cesare");
-    menuTabs->addTab(new vigenereView(),"cifrario Vigenere");
-    menuTabs->addTab(new sha1View(),"sha-1");
+    menuTabs->addTab(new cesareView(),"Caesar code");
+    menuTabs->addTab(new vigenereView(),"Vigenere code");
+    menuTabs->addTab(new sha1View(),"sha");
     mainLayout->addWidget(menuTabs);
 
-//Label->setText("<font color='red'>Some text</font>");
-    QFile res(":/img/font/Aaargh.ttf");
-    QFileSystemModel model;
+    //Label->setText("<font color='red'>Some text</font>");
+    //QFile res(":/img/font/Aaargh.ttf");
+    //QFileSystemModel model;
     //set model
     QFont f;
     f.setFamily("ARG");

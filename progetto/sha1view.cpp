@@ -25,7 +25,7 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     content->setAlignment(Qt::AlignCenter);
 
     vBox2->setAlignment(Qt::AlignBottom);
-    shaBox->setAlignment(Qt::AlignBottom);
+    shaBox->setAlignment(Qt::AlignLeft);
     inputTitle->setAlignment(Qt::AlignTop);
     //outputTitle->setAlignment(Qt::AlignTop);
     //inputTitle->setAlignment(Qt::AlignBottom);
@@ -52,6 +52,8 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
 
     //outputText->setObjectName("shaOutput");
     outputText->setMaximumHeight(100);
+    outputText->setMaximumWidth(600);
+    inputText->setMaximumWidth(600);
 
     setLayout(content);
 

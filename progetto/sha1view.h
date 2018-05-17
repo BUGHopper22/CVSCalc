@@ -13,10 +13,6 @@
 #include <QHBoxLayout>
 #include <QString>
 #include <QLineEdit>
-#include <bitset>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
 
 class sha1View:public QWidget{
     Q_OBJECT

@@ -2,6 +2,7 @@
 #define CIFRARIOVIGENERE_H
 #include<testo.h>
 #include <QString>
+#include <QDebug>
 
 class cifrarioVigenere:public testo{
 private:
@@ -13,7 +14,7 @@ public:
 
     static const ushort fix;
 
- //forse è meglio impostare il costruttore con i campi dati vuoti e successivamente
+    //forse è meglio impostare il costruttore con i campi dati vuoti e successivamente
     //settare con i metodi set i campi dati successivamente quando andrò a convertire
 
     //___SETTER___
@@ -29,11 +30,10 @@ public:
 
     //___METODI
     virtual void converti();
-    virtual void encrypt();
-    virtual void decrypt();
-    void reset();       //DA FARE metodo sovraccaricato dalla base
-    void copy() const;  //DA FARE
-
+    void encrypt();
+    void decrypt();
+    virtual void reset();       //DA FARE metodo sovraccaricato dalla base
+    void copy() const;
 };
 
 #endif // CIFRARIOVIGENERE_H

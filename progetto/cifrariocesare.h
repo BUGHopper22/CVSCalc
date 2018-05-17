@@ -1,6 +1,7 @@
 #ifndef CIFRARIOCESARE_H
 #define CIFRARIOCESARE_H
 #include<testo.h>
+#include <QDebug>
 
 class cifrarioCesare:public testo{
 private:
@@ -25,8 +26,8 @@ public:
 
     //___METODI___
     virtual void converti();
-    virtual void encrypt();
-    virtual void decrypt();
+    void encrypt();
+    void decrypt();
     void reset();           //DA FARE
     void copy() const;      //DA FARE
 };

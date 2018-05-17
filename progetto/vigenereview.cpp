@@ -1,10 +1,4 @@
 #include "vigenereView.h"
-#include "cifrariocesare.h"
-#include "controller.h"
-
-
-
-
 
 vigenereView::vigenereView(QWidget *parent):QWidget(parent){
 

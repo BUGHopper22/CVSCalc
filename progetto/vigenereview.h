@@ -13,6 +13,8 @@
 #include <QHBoxLayout>
 #include <QString>
 #include <QLineEdit>
+#include "cifrariocesare.h"
+#include "controller.h"
 
 class vigenereView:public QWidget{
     Q_OBJECT

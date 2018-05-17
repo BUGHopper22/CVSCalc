@@ -1,5 +1,5 @@
 #include "cifrariocesare.h"
-#include <QDebug>
+
 
 //RIDEFINIZIONE OPERATOR TRA QCHAR E USHORT (DOVE LI METTO?)
 ushort operator+(QChar c,const ushort& i){
@@ -53,13 +53,10 @@ void cifrarioCesare::decrypt(){
         if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){// devo agire sul dato
             if(     (letter>='A' && letter<='Z' && letter-shift<'A')||
                     (letter>='a' && letter<='z' && letter-shift<'a')     )
-               { ciph[i]=QChar((letter-shift)+alphSize);
-                //qDebug()<<"first"<<endl;
-            }
-            else{
+                ciph[i]=QChar((letter-shift)+alphSize);
+            else
                 ciph[i]=QChar(letter-shift);
-                //qDebug()<<"second"<<endl;
-            }
+
         }
         else
             ciph[i]=letter;

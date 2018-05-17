@@ -4,6 +4,7 @@
 #include<QByteArray>
 #include<QCryptographicHash>
 #include<QString>
+#include "QDebug"
 
 class sha:public testo{
 private:
@@ -30,8 +31,6 @@ public:
     //___METODI
     virtual void converti();
     virtual void reset();
-    virtual void encrypt();
-    virtual void decrypt();
 };
 
 #endif // SHA_H

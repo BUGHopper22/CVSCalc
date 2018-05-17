@@ -50,6 +50,7 @@ QLabel{
     margin-left:5px;
 }
 
+
 QTextEdit,QLineEdit{
 color:#2e3641;
 font-family:dense;
@@ -133,6 +134,8 @@ color: #9eb2c0;
 /*font-family:dense;*/
 font-size:30px;
 height:40px;
+width:100px;
+margin-left:5px;
 }
 
 QRadioButton::indicator{
