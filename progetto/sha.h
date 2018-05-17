@@ -32,11 +32,6 @@ public:
     virtual void reset();
     virtual void encrypt();
     virtual void decrypt();
-    //void sha1();
-    //void sha224();
-    //void sha256();
-    //void sha384();
-    //void sha512();
 };
 
 #endif // SHA_H

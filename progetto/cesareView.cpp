@@ -54,7 +54,8 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(resetButton);
     outputText->setReadOnly(true);
 
-
+    inputText->setObjectName("CesareText");
+    outputText->setObjectName("CesareText");
 
     setLayout(content);
 

@@ -36,10 +36,18 @@ QSpinBox,QLineEdit{
 
 }
 
-QTextEdit{
+/*QTextEdit#cesareText,QTextEdit#vigenereText{
     height:300px;
     width:250px;
 
+}*/
+
+QTextEdit{
+margin:5px;
+}
+
+QLabel{
+    margin-left:5px;
 }
 
 QTextEdit,QLineEdit{
@@ -63,11 +71,7 @@ QLineEdit{height:40px;}
 
 
 
-QTextEdit#shaOutput{
-    height:10px;
-    width:40px;
-    background-color:red;
-}
+
 
 
 

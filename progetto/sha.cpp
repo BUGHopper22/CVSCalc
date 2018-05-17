@@ -1,4 +1,5 @@
 #include "sha.h"
+#include "QDebug"
 
 sha::sha(QString s,ushort t,int d):ciph(s),type(t),dim(d){
     messageDigest=new unsigned char[dim];

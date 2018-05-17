@@ -23,7 +23,7 @@ class sha1View:public QWidget{
 private:
     //__box
     QHBoxLayout* content;
-    QVBoxLayout* shaBox;
+    QGridLayout* shaBox;
     QVBoxLayout* vBox1;
     QVBoxLayout* vBox2;
     QVBoxLayout* vBox3;

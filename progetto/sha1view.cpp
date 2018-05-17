@@ -18,17 +18,17 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     resetButton=new QPushButton("reset");
     //__box
     content=new QHBoxLayout;
-    shaBox=new QVBoxLayout;
+    shaBox=new QGridLayout;
     vBox1=new QVBoxLayout;
     vBox2=new QVBoxLayout;
 
     content->setAlignment(Qt::AlignCenter);
 
-    vBox2->setAlignment(Qt::AlignCenter);
-    shaBox->setAlignment(Qt::AlignTop);
+    vBox2->setAlignment(Qt::AlignBottom);
+    shaBox->setAlignment(Qt::AlignBottom);
     inputTitle->setAlignment(Qt::AlignTop);
-    outputTitle->setAlignment(Qt::AlignTop);
-    inputTitle->setAlignment(Qt::AlignBottom);
+    //outputTitle->setAlignment(Qt::AlignTop);
+    //inputTitle->setAlignment(Qt::AlignBottom);
     outputTitle->setAlignment(Qt::AlignBottom);
 
     content->addLayout(vBox1);
@@ -39,21 +39,19 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     vBox1->addWidget(outputTitle);
     vBox1->addWidget(outputText);
 
-
-    vBox2->addLayout(shaBox);
-    shaBox->addWidget(sha1Button);
-    shaBox->addWidget(sha224Button);
-    shaBox->addWidget(sha256Button);
-    shaBox->addWidget(sha384Button);
-    shaBox->addWidget(sha512Button);
-
     vBox2->addWidget(convertButton);
+    vBox2->addLayout(shaBox);
+    shaBox->addWidget(sha1Button,0,0);
+    shaBox->addWidget(sha224Button,0,1);
+    shaBox->addWidget(sha256Button,1,0);
+    shaBox->addWidget(sha384Button,1,1);
+    shaBox->addWidget(sha512Button,2,0);
     vBox2->addWidget(copyButton);
     vBox2->addWidget(resetButton);
     outputText->setReadOnly(true);
 
-    outputText->setObjectName("shaOutput");
-
+    //outputText->setObjectName("shaOutput");
+    outputText->setMaximumHeight(100);
 
     setLayout(content);
 
@@ -80,10 +78,10 @@ void sha1View::convertS(){
             type=4; dim=32;
         }
         if(sha384Button->isChecked()){
-            type=2; dim=48;
+            type=5; dim=48;
         }
         if(sha512Button->isChecked()){
-            type=2; dim=64;
+            type=6; dim=64;
         }
     }
 

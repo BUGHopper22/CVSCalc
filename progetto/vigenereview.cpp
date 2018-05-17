@@ -57,6 +57,9 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(resetButton);
     outputText->setReadOnly(true);
 
+    inputText->setObjectName("vigenereText");
+    outputText->setObjectName("vigenereText");
+
     setLayout(content);
 
     //CONVERT BUTTON
