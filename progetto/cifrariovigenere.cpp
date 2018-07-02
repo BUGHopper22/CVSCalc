@@ -11,7 +11,7 @@ ushort operator-(QChar a,QChar const & b){
 
 const ushort cifrarioVigenere::fix=96;// forse 97
 
-cifrarioVigenere::cifrarioVigenere(QString c,QString v):testo(c),ciph(c),key(v){}
+cifrarioVigenere::cifrarioVigenere(QString c,QString v,bool b):testo(c),ciph(c),key(v),check(b){}
 
 //___SETTER___
 void cifrarioVigenere::setText(QString s){testo::setText(s);}
@@ -26,6 +26,17 @@ QString cifrarioVigenere::getCiph() const{return ciph;}
 
 //___METODI___
 void cifrarioVigenere::converti(){
+    if(ciph=="")
+        throw(Error('i'));
+    if(key=="")
+        throw(Error('k'));
+    QString::const_iterator it=key.begin();
+    for(; it!=key.end();++it){
+        if(it->isNumber()){
+            throw(Error('n'));
+        }
+    }
+
     if(check)
         encrypt();
     else
@@ -37,6 +48,8 @@ void cifrarioVigenere::reset(){
     key.clear();    //ATTENZIONE: probabilmente size of string=0. Controllare cosa fa il clear!!
 }
 void cifrarioVigenere::encrypt(){
+    //_______________KEY CON LETTERE MAIUSCOLE??????????????_________________________RISOLTO
+
     //________RICORDA: a equivale a zero_________
     QString::const_iterator cit=key.cbegin();
     QString::iterator it;
@@ -44,8 +57,11 @@ void cifrarioVigenere::encrypt(){
         if(cit==key.cend())
             cit=key.cbegin();
         QChar letter=*it;
-        QChar shift=(*cit)-97;
-        if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){// sono i caratteri che devo andare a modificare
+        //se nella key si mettono delle lettere maiuscole il conto verrebbe errato => le trasformo tutte in minuscole con toLower().
+        QChar shift=(*cit).toLower()-97;
+        //Attenzione:non posso usare isLetter() perchè mi prende anche le lettere accentate!!
+        //Se sono: numeri || lettere accentate || spazi || punteggiatura, non entra e li lascia invariati.
+        if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){
             if( (letter>='A' && letter<='Z' && letter+shift>ushort('Z'))||
                 (letter>='a' && letter<='z' && letter+shift>ushort('z')) )
                 *it=QChar(letter+shift-alphSize);

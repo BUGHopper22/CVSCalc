@@ -49,6 +49,7 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(convertButton);
     vBox2->addLayout(encDecBox);
     encDecBox->addWidget(encRadButton);
+    encRadButton->setChecked(true);
     encDecBox->addWidget(decRadButton);
     vBox2->addWidget(copyButton);
     vBox2->addWidget(resetButton);
@@ -69,9 +70,9 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
 
 //____CONVERT BUTTON
 void cesareView::convert(){
-    if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
+    //if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
         emit convertMethod(inputText->toPlainText(),keyText->value(),encRadButton->isChecked());
-    else{/*errore input*/ }
+    //else{/*errore input*/ }
 }
 void cesareView::cesareOutput(QString s){
     outputText->clear();

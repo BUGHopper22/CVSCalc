@@ -6,12 +6,13 @@
 class cifrarioCesare:public testo{
 private:
     QString ciph;
-    //nessun controllo eseguito:deve essere maggiore di zero e minore di 26
     ushort shift;
     bool check;
+
 public:
-    cifrarioCesare(QString c="", ushort s=3);//controllo di integrita su 0<=shift<=26
+    cifrarioCesare(QString c="", ushort s=3);
     //~cifrarioCesare();
+
     //___SETTER___
     void setText(QString s);
     void setCiph(QString s);
@@ -20,7 +21,6 @@ public:
 
     //___GETTER___
     bool getCheck()const;
-    QChar getCar(int i)const;
     QString getCiph()const;
     QString getText()const;
 
@@ -28,8 +28,8 @@ public:
     virtual void converti();
     void encrypt();
     void decrypt();
-    void reset();           //DA FARE
-    void copy() const;      //DA FARE
+    virtual void reset();
+    //void copy() const;
 };
 
 #endif // CIFRARIOCESARE_H

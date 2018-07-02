@@ -17,6 +17,11 @@ int main(int argc, char *argv[])
 
     controller controllerApp;
 
+
+    cifrarioVigenere v;
+
+
+
     //FONT
     //otf
     QFontDatabase::addApplicationFont(":/img/font/Dense-Regular.otf");

@@ -1,5 +1,6 @@
 #include "controller.h"
-
+#include<QMessageBox>
+#include<error.h>
 
 controller::controller():w(new MainWindow()),cesare(),vigenere(),shaOb(){
 //_____CESARE_____//
@@ -35,7 +36,15 @@ void controller::convert(QString s,int u,bool b){
     cesare.setCiph(s);
     cesare.setShift(u);
     cesare.setCheck(b);
-    cesare.converti();
+    //cesare.converti();
+    try{cesare.converti();}
+    catch(Error& e){
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Errore");
+        if(e.getType()=='i')
+            msgBox.setText("l' input è vuoto");
+        msgBox.exec();
+    }
     emit cesareOutput(cesare.getCiph());
 }
 void controller::reset(){//occhio alla seconda connect probabilmente inutile
@@ -50,7 +59,18 @@ void controller::convertV(QString s,QString k,bool b){
     vigenere.setCiph(s);
     vigenere.setKey(k);
     vigenere.setCheck(b);
-    vigenere.converti();
+    try{vigenere.converti();}
+    catch(Error& e){
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Errore");
+        if(e.getType()=='i')
+            msgBox.setText("l' input è vuoto");
+        if(e.getType()=='k')
+            msgBox.setText("Ricordati di inserire la key");
+        if(e.getType()=='n')
+            msgBox.setText("Non si possono inserire numeri nella key");
+        msgBox.exec();
+    }
     emit vigenereOutputV(vigenere.getCiph());
 }
 void controller::resetV(){
@@ -62,12 +82,22 @@ void controller::resetV(){
 void controller::convertS(QString s,ushort t,int d){
     shaOb.reset();
     shaOb.setText(s);
-    shaOb.setCiph(s);
+    //shaOb.setCiph(s);
     shaOb.setType(t);
     shaOb.setDim(d);
-    //qDebug()<<"convertS2"<<sha.getCiph();
-    shaOb.converti();
-    //qDebug()<<"convertS2 dopo sha1.converti()"<<sha.getCiph();
+    //shaOb.converti();
+    try{shaOb.converti();}
+    catch(Error& e){
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Errore");
+        if(e.getType()=='i')
+            msgBox.setText("l' input è vuoto");
+        if(e.getType()=='k')
+            msgBox.setText("Ricordati di inserire la key");
+        if(e.getType()=='n')
+            msgBox.setText("Non si possono inserire numeri nella key");
+        msgBox.exec();
+    }
     emit sha1OutputS(shaOb.getMessageDigest());
 
 }

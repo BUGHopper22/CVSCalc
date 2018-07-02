@@ -3,6 +3,12 @@
 #include<testo.h>
 #include <QString>
 #include <QDebug>
+#include <error.h>
+
+
+//__________ATTENZIONEEEEE___________
+//______BUG DELLA KEY VUOTA, CONTROLLAREEEE____
+
 
 class cifrarioVigenere:public testo{
 private:
@@ -10,7 +16,7 @@ private:
     QString key;
     bool check;
 public:
-    cifrarioVigenere(QString="",QString="verme");
+    cifrarioVigenere(QString="",QString="verme",bool=true);
 
     static const ushort fix;
 
@@ -33,7 +39,7 @@ public:
     void encrypt();
     void decrypt();
     virtual void reset();       //DA FARE metodo sovraccaricato dalla base
-    void copy() const;
+    //void copy() const;
 };
 
 #endif // CIFRARIOVIGENERE_H

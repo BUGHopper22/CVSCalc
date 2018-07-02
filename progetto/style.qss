@@ -14,7 +14,7 @@ background-color:#2e3641;
 }
 
 /*finestra principale tab*/
-QTabWidget::pane { /* The tab widget frame */
+QTabWidget::pane,QMessageBox { /* The tab widget frame */
     padding-top:30px;
     background-color:/*#394264*/#2e3641;
     border-radius:0px;

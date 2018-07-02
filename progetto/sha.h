@@ -8,9 +8,8 @@
 
 class sha:public testo{
 private:
-    QString ciph;
     ushort type;
-    int dim;
+    int dim;//è la dimensione che avrà il message disgest
     //ricorda di fare la delete su questo array dinamico
     unsigned char* messageDigest;
 public:
@@ -18,13 +17,11 @@ public:
 
     //___SETTER___
     void setText(QString);
-    void setCiph(QString);
     void setType(ushort);
     void setDim(int);
 
     //___GETTER___
     QString getText()const;
-    QString getCiph()const;
     int getDim()const;
     QString getMessageDigest()const;
 

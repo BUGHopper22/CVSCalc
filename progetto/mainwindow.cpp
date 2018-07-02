@@ -6,14 +6,16 @@
 #include <vigenereView.h>
 #include <sha1View.h>
 #include <QFileSystemModel>
+#include <QIcon>
 
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent):QWidget(parent)
 {
     this->setFixedSize(1000,500);
-    this->setWindowTitle("Dyh Fhvduh");
+    this->setWindowTitle("CVS calculator");
     this->setStyleSheet("font-size: large;");
+    this->setWindowIcon(QIcon("icon.png"));
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 

@@ -46,6 +46,7 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     vBox2->addWidget(convertButton);
     vBox2->addLayout(encDecBox);
     encDecBox->addWidget(encRadButton);
+    encRadButton->setChecked(true);
     encDecBox->addWidget(decRadButton);
     vBox2->addWidget(copyButton);
     vBox2->addWidget(resetButton);
@@ -60,16 +61,16 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
     connect(convertButton,SIGNAL(clicked(bool)),this,SLOT(convertV()));
     //COPY BUTTON
     connect(copyButton,SIGNAL(clicked(bool)),this,SLOT(copyOutputV()));
-    //CONVERT BUTTON
+    //RESET BUTTON
     connect(resetButton,SIGNAL(clicked(bool)),this,SLOT(resetV()));
 }
 
 //CONVERT BUTTON
 void vigenereView::convertV(){
-    if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
+    //if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
         emit convertMethodV(inputText->toPlainText(),keyText->text(),encRadButton->isChecked());
-    else{//errore input
- }
+    //else{//errore input
+ //}
 }
 void vigenereView::vigenereOutputV(QString s){
     outputText->clear();

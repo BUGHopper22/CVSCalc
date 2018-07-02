@@ -32,7 +32,9 @@ SOURCES += \
     sha1view.cpp \
     testo.cpp \
     vigenereview.cpp\
-    sha.cpp
+    sha.cpp \
+    morse.cpp \
+    error.cpp
 
 HEADERS += \
     cesareView.h \
@@ -45,7 +47,9 @@ HEADERS += \
     testo.h \
     ui_mainwindow.h \
     vigenereView.h \
-    sha.h
+    sha.h \
+    morse.h \
+    error.h
 
 FORMS += \
         mainwindow.ui
@@ -70,7 +74,8 @@ DISTFILES += \
     img/font/Titillium-Light.otf \
     img/font/Titillium-Regular.otf \
     img/font/Titillium-Thin.otf \
-    img/font/Aaargh.ttf
+    img/font/Aaargh.ttf \
+    img/icon.png
 
 RESOURCES += \
     stylesheet.qrc

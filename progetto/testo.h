@@ -8,11 +8,14 @@ using namespace std;
 class testo{
 private:
     QString text;
+
+
 public:
+
     static const ushort alphSize;  //probabilmente nella parte privata?
 
     testo(QString text="");
-    //virtual ~testo();     DA DEFINIRE PIU TARDI
+    //virtual ~testo();     //DA DEFINIRE PIU TARDI
 
     //___SETTER___
     void setText(QString);
@@ -23,7 +26,7 @@ public:
     int getSize() const ;
 
     //___METODI___
-    virtual void converti() =0;
+    virtual void converti() =0; //metodo virtiale puro-> classe base atratta
     virtual void reset();
 };
 

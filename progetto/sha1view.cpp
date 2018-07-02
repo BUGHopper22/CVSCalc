@@ -1,5 +1,6 @@
 #include "sha1View.h"
 #include<QDebug>
+#include <Error.h>
 
 sha1View::sha1View(QWidget*parent):QWidget(parent){
     inputTitle=new QLabel("input");
@@ -27,8 +28,6 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     vBox2->setAlignment(Qt::AlignBottom);
     shaBox->setAlignment(Qt::AlignLeft);
     inputTitle->setAlignment(Qt::AlignTop);
-    //outputTitle->setAlignment(Qt::AlignTop);
-    //inputTitle->setAlignment(Qt::AlignBottom);
     outputTitle->setAlignment(Qt::AlignBottom);
 
     content->addLayout(vBox1);
@@ -42,6 +41,7 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
     vBox2->addWidget(convertButton);
     vBox2->addLayout(shaBox);
     shaBox->addWidget(sha1Button,0,0);
+    sha1Button->setChecked(true);
     shaBox->addWidget(sha224Button,0,1);
     shaBox->addWidget(sha256Button,1,0);
     shaBox->addWidget(sha384Button,1,1);
@@ -67,29 +67,24 @@ sha1View::sha1View(QWidget*parent):QWidget(parent){
 
 //____CONVERT BUTTON
 void sha1View::convertS(){
-    int type=-1;
-    int dim=-1;
-    if(inputText->toPlainText()!=""){
-        if(sha1Button->isChecked()){
-            type=2; dim=20;
-        }
-        if(sha224Button->isChecked()){
-            type=3; dim=20;
-        }
-        if(sha256Button->isChecked()){
-            type=4; dim=32;
-        }
-        if(sha384Button->isChecked()){
-            type=5; dim=48;
-        }
-        if(sha512Button->isChecked()){
-            type=6; dim=64;
-        }
+    int type=0;
+    int dim=0;
+    if(sha1Button->isChecked()){
+        type=2; dim=20;
     }
-
-    if(type<0 || dim<0){//problemi con l' input
+    if(sha224Button->isChecked()){
+        type=3; dim=20;
     }
-    else
+    if(sha256Button->isChecked()){
+        type=4; dim=32;
+    }
+    if(sha384Button->isChecked()){
+        type=5; dim=48;
+    }
+    if(sha512Button->isChecked()){
+        type=6; dim=64;
+    }
+    if(type && dim)
         emit convertMethodS(inputText->toPlainText(),type,dim);
 }
 void sha1View::sha1OutputS(QString s){
