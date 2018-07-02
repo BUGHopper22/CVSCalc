@@ -6,10 +6,6 @@
 #include <error.h>
 
 
-//__________ATTENZIONEEEEE___________
-//______BUG DELLA KEY VUOTA, CONTROLLAREEEE____
-
-
 class cifrarioVigenere:public testo{
 private:
     QString ciph;
@@ -19,10 +15,6 @@ public:
     cifrarioVigenere(QString="",QString="verme",bool=true);
 
     static const ushort fix;
-
-    //forse è meglio impostare il costruttore con i campi dati vuoti e successivamente
-    //settare con i metodi set i campi dati successivamente quando andrò a convertire
-
     //___SETTER___
     void setText(QString);
     void setKey(QString);
@@ -39,7 +31,6 @@ public:
     void encrypt();
     void decrypt();
     virtual void reset();       //DA FARE metodo sovraccaricato dalla base
-    //void copy() const;
 };
 
 #endif // CIFRARIOVIGENERE_H

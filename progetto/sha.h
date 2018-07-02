@@ -9,11 +9,13 @@
 class sha:public testo{
 private:
     ushort type;
-    int dim;//è la dimensione che avrà il message disgest
-    //ricorda di fare la delete su questo array dinamico
+    //è la dimensione che avrà il message digest
+    int dim;
+    //ricorda di fare la delete su questo array dinamico??
     unsigned char* messageDigest;
 public:
     sha(QString="",ushort=0,int=0);
+    ~sha();
 
     //___SETTER___
     void setText(QString);

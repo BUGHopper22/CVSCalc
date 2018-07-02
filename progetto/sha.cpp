@@ -5,6 +5,10 @@ sha::sha(QString s,ushort t,int d):testo(s),type(t),dim(d){
     messageDigest=new unsigned char[dim];
 }
 
+sha::~sha(){
+    delete[] messageDigest;
+}
+
 //___SETTER
 void sha::setText(QString s){testo::setText(s);}
 void sha::setType(ushort t){type=t;}
@@ -45,6 +49,7 @@ void sha::reset(){
     testo::reset();
     dim=0;
     type=0;
+    ~sha();
     messageDigest=new unsigned char[0];
 }
 
