@@ -9,7 +9,7 @@ ushort operator-(QChar a,QChar const & b){
     return ushort(a.unicode()-b.unicode());
 }
 
-const ushort cifrarioVigenere::fix=96;// forse 97
+const ushort cifrarioVigenere::fix=97;// forse 97
 
 cifrarioVigenere::cifrarioVigenere(QString c,QString v,bool b):testo(c),ciph(c),key(v),check(b){}
 
@@ -30,11 +30,15 @@ void cifrarioVigenere::converti(){
         throw(Error('i'));
     if(key=="")
         throw(Error('k'));
-    QString::const_iterator it=key.begin();
-    for(; it!=key.end();++it){
-        if(it->isNumber()){
+    //controllo sulle lettere della key
+    QString::const_iterator cit=key.cbegin();
+    for(;cit!=key.end();cit++){
+        QChar letter=*cit;
+        if(cit->isNumber()){
             throw(Error('n'));
         }
+        else if(!('A'<letter && letter<'Z' && 'a'<letter && letter<'z'))
+            throw(Error('k1'));
     }
 
     if(check)
@@ -48,7 +52,6 @@ void cifrarioVigenere::reset(){
     key.clear();    //ATTENZIONE: probabilmente size of string=0. Controllare cosa fa il clear!!
 }
 void cifrarioVigenere::encrypt(){
-    //_______________KEY CON LETTERE MAIUSCOLE??????????????_________________________RISOLTO
 
     //________RICORDA: a equivale a zero_________
     QString::const_iterator cit=key.cbegin();
@@ -58,7 +61,7 @@ void cifrarioVigenere::encrypt(){
             cit=key.cbegin();
         QChar letter=*it;
         //se nella key si mettono delle lettere maiuscole il conto verrebbe errato => le trasformo tutte in minuscole con toLower().
-        QChar shift=(*cit).toLower()-97;
+        QChar shift=(*cit).toLower()-fix;
         //Attenzione:non posso usare isLetter() perchè mi prende anche le lettere accentate!!
         //Se sono: numeri || lettere accentate || spazi || punteggiatura, non entra e li lascia invariati.
         if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){
@@ -82,7 +85,7 @@ void cifrarioVigenere::decrypt(){
         if(cit==key.cend())
             cit=key.cbegin();
         QChar letter=*it;
-        QChar shift=(*cit)-97;
+        QChar shift=(*cit)-fix;
         if( (letter>='A' && letter<='Z') || (letter>='a' && letter<='z') ){// sono i caratteri che devo andare a modificare
             if( (letter>='A' && letter<='Z' && letter-shift<ushort('A'))||
                 (letter>='a' && letter<='z' && letter-shift<ushort('a')) )

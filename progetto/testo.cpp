@@ -5,6 +5,8 @@ const ushort testo::alphSize=26;
 
 testo::testo(QString s):text(s){}
 
+testo::~testo(){}
+
 //___SETTER___
 void testo::setText(QString s){
     text.clear();

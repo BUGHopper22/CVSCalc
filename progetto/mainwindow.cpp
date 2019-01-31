@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+//#include "ui_mainwindow.h"
 #include "iostream"
 #include <cifrariocesare.h>
 #include <cesareView.h>
@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent):QWidget(parent)
     this->setFixedSize(1000,500);
     this->setWindowTitle("CVS calculator");
     this->setStyleSheet("font-size: large;");
-    this->setWindowIcon(QIcon("icon.png"));
+    //this->setWindowIcon(QIcon(":/icon.png"));
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 

@@ -15,7 +15,7 @@ public:
     static const ushort alphSize;  //probabilmente nella parte privata?
 
     testo(QString text="");
-    //virtual ~testo();     //DA DEFINIRE PIU TARDI
+    virtual ~testo();     //DA DEFINIRE PIU TARDI
 
     //___SETTER___
     void setText(QString);

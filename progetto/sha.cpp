@@ -49,7 +49,7 @@ void sha::reset(){
     testo::reset();
     dim=0;
     type=0;
-    ~sha();
+    delete[] messageDigest;
     messageDigest=new unsigned char[0];
 }
 

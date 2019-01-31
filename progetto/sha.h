@@ -1,10 +1,10 @@
+
 #ifndef SHA_H
 #define SHA_H
 #include<testo.h>
 #include<QByteArray>
 #include<QCryptographicHash>
 #include<QString>
-#include "QDebug"
 
 class sha:public testo{
 private:

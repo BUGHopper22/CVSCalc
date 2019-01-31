@@ -28,12 +28,10 @@ SOURCES += \
     cifrariocesare.cpp \
     cifrariovigenere.cpp \
     controller.cpp \
-    sha1.cpp \
     sha1view.cpp \
     testo.cpp \
     vigenereview.cpp\
     sha.cpp \
-    morse.cpp \
     error.cpp
 
 HEADERS += \
@@ -42,13 +40,10 @@ HEADERS += \
     cifrariovigenere.h \
     controller.h \
     mainwindow.h \
-    sha1.h \
     sha1view.h \
     testo.h \
-    ui_mainwindow.h \
     vigenereView.h \
     sha.h \
-    morse.h \
     error.h
 
 FORMS += \
