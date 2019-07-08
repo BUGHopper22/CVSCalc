@@ -22,7 +22,7 @@ The calculator must be work in:
 ## Development
 To develop the calculator was used:
 * Windows 10;
-* Qt v5.4.0;
+* MinGW 4.9.2;
 * Qt library v5.5.1;
 * QtCreator v4.5.2.
 
