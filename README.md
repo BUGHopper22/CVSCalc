@@ -4,7 +4,7 @@ Universitary project to learn object oriented programming using C++.
 # CVS Calc
 CVS Calc is a calculator to crypt and encrypt a text using simple chipers:
 * Caesar cipher
-![Caesar view](../../readMeImages/CifrarioCesare.PNG)
+![Caesar view](./readMeImages/CifrarioCesare.PNG)
 * Vigenere cipher
 ![Vigenere view](pathRelative)
 * SHA
