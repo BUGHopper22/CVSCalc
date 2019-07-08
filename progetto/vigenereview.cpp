@@ -68,7 +68,9 @@ vigenereView::vigenereView(QWidget *parent):QWidget(parent){
 //CONVERT BUTTON
 void vigenereView::convertV(){
     //if(inputText->toPlainText()!="" && (encRadButton->isChecked()||decRadButton->isChecked()))
-        emit convertMethodV(inputText->toPlainText(),keyText->text(),encRadButton->isChecked());
+    //keyText = "prova"    ;
+
+    emit convertMethodV(inputText->toPlainText(),keyText->text(),encRadButton->isChecked());
     //else{//errore input
  //}
 }

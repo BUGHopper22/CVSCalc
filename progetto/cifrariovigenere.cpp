@@ -32,13 +32,17 @@ void cifrarioVigenere::converti(){
         throw(Error('k'));
     //controllo sulle lettere della key
     QString::const_iterator cit=key.cbegin();
-    for(;cit!=key.end();cit++){
+    for(;cit!=key.cend();cit++){
+        qDebug() << *cit;
+        qDebug() << "porcatroia";
         QChar letter=*cit;
         if(cit->isNumber()){
             throw(Error('n'));
         }
-        else if(!('A'<letter && letter<'Z' && 'a'<letter && letter<'z'))
+        else if( ('A'<letter && letter>'Z' && 'a'<letter && letter>'z')){
+            qDebug() << "problema è qui";
             throw(Error('k1'));
+        }
     }
 
     if(check)

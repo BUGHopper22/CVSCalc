@@ -59,8 +59,11 @@ void controller::reset(){//occhio alla seconda connect probabilmente inutile
 void controller::convertV(QString s,QString k,bool b){
     vigenere.reset();
     vigenere.setText(s);
+
     vigenere.setCiph(s);
     vigenere.setKey(k);
+    if(k!=NULL)
+        qDebug() << k;
     vigenere.setCheck(b);
     try{vigenere.converti();
         emit vigenereOutputV(vigenere.getCiph());

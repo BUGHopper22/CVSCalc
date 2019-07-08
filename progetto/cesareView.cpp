@@ -12,7 +12,7 @@ cesareView::cesareView(QWidget *parent):QWidget(parent){
     keyText=new QSpinBox;
     encRadButton=new QRadioButton("encrypt");
     decRadButton= new QRadioButton("decrypt");
-    convertButton=new QPushButton("converti");
+    convertButton=new QPushButton("convert");
     copyButton=new QPushButton("output copy");
     resetButton=new QPushButton("reset");
     //__box
